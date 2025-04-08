@@ -1,0 +1,66 @@
+{
+    "functions": [
+      {
+        "name": "CountRows",
+        "description": "Returns the number of rows in a table.",
+        "syntax": "CountRows(source)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to count rows from."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table."
+        },
+        "validators": {
+          "source": "isTable"
+        },
+        "signatures": [
+          ["source"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            },
+            {
+              "code": "InvalidSchema",
+              "message": "The table must have exactly one column."
+            }
+          ]
+        }
+      },
+      {
+        "name": "CountRows_UO",
+        "description": "Returns the number of rows in an untyped object.",
+        "syntax": "CountRows(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "UntypedObject",
+            "description": "The untyped object to count rows from."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be an untyped object."
+        },
+        "validators": {
+          "arg": "isUntypedObject"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be an untyped object."
+            }
+          ]
+        }
+      }
+    ]
+  }

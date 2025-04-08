@@ -1,0 +1,46 @@
+{
+    "functions": [
+      {
+        "name": "CountIf",
+        "description": "Returns the number of records in a table that meet a specified condition.",
+        "syntax": "CountIf(source, predicate [, predicate, ...])",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to count records from."
+          },
+          {
+            "name": "predicate",
+            "type": "Boolean",
+            "description": "The condition to evaluate for each record."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "predicate": "Must be a boolean expression."
+        },
+        "validators": {
+          "source": "isTable",
+          "predicate": "isBoolean"
+        },
+        "signatures": [
+          ["source", "predicate"],
+          ["source", "predicate", "predicate"],
+          ["source", "predicate", "predicate", "predicate"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least two parameters are required."
+            }
+          ]
+        }
+      }
+    ]
+  }

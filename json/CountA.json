@@ -1,0 +1,37 @@
+{
+    "functions": [
+      {
+        "name": "CountA",
+        "description": "Returns the number of non-empty records in a table.",
+        "syntax": "CountA(source)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to count non-empty records from."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table."
+        },
+        "validators": {
+          "source": "isTable"
+        },
+        "signatures": [
+          ["source"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            },
+            {
+              "code": "InvalidSchema",
+              "message": "The table must have exactly one column."
+            }
+          ]
+        }
+      }
+    ]
+  }
