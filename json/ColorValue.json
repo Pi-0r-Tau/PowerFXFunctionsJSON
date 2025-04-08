@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "ColorValue",
+        "description": "Returns the color value for the given color string.",
+        "syntax": "ColorValue(colorstring)",
+        "parameters": [
+          {
+            "name": "colorstring",
+            "type": "String",
+            "description": "The color string to convert to a color value."
+          }
+        ],
+        "constraints": {
+          "colorstring": "Must be a valid color string."
+        },
+        "validators": {
+          "colorstring": "isString"
+        },
+        "signatures": [
+          ["colorstring"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid color string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "ColorValue_UO",
+        "description": "Returns the color value for the given untyped object.",
+        "syntax": "ColorValue(colorstring)",
+        "parameters": [
+          {
+            "name": "colorstring",
+            "type": "UntypedObject",
+            "description": "The untyped object to convert to a color value."
+          }
+        ],
+        "constraints": {
+          "colorstring": "Must be a valid untyped object."
+        },
+        "validators": {
+          "colorstring": "isUntypedObject"
+        },
+        "signatures": [
+          ["colorstring"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid untyped object."
+            }
+          ]
+        }
+      }
+    ]
+  }

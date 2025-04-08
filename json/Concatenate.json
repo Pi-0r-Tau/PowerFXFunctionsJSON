@@ -1,0 +1,93 @@
+{
+    "functions": [
+      {
+        "name": "Concatenate",
+        "description": "Concatenates multiple strings into one string.",
+        "syntax": "Concatenate(source1, source2, ...)",
+        "parameters": [
+          {
+            "name": "source1",
+            "type": "String",
+            "description": "The first string to concatenate."
+          },
+          {
+            "name": "source2",
+            "type": "String",
+            "description": "The second string to concatenate."
+          }
+
+        ],
+        "constraints": {
+          "source1": "Must be a string.",
+          "source2": "Must be a string."
+        },
+        "validators": {
+          "source1": "isString",
+          "source2": "isString"
+        },
+        "signatures": [
+          ["source1"],
+          ["source1", "source2"],
+          ["source1", "source2", "source3"],
+          ["source1", "source2", "source3", "source4"]
+
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of type string."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least one parameter is required."
+            }
+          ]
+        }
+      },
+      {
+        "name": "ConcatenateTable",
+        "description": "Concatenates multiple strings or tables of strings into one table of strings.",
+        "syntax": "Concatenate(source1, source2, ...)",
+        "parameters": [
+          {
+            "name": "source1",
+            "type": "String or Table of Strings",
+            "description": "The first string or table of strings to concatenate."
+          },
+          {
+            "name": "source2",
+            "type": "String or Table of Strings",
+            "description": "The second string or table of strings to concatenate."
+          }
+
+        ],
+        "constraints": {
+          "source1": "Must be a string or table of strings.",
+          "source2": "Must be a string or table of strings."
+        },
+        "validators": {
+          "source1": "isStringOrTableOfStrings",
+          "source2": "isStringOrTableOfStrings"
+        },
+        "signatures": [
+          ["source1", "source2"],
+          ["source1", "source2", "source3"],
+          ["source1", "source2", "source3", "source4"]
+
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of type string or table of strings."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least one parameter is required."
+            }
+          ]
+        }
+      }
+    ]
+  }

@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "Cos",
+        "description": "Returns the cosine of a number.",
+        "syntax": "Cos(number)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number for which to find the cosine."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a numeric value."
+        },
+        "validators": {
+          "number": "isNumber"
+        },
+        "signatures": [
+          ["number"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a numeric value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "CosTable",
+        "description": "Computes the cosine of each item in the input table.",
+        "syntax": "Cos(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table containing numeric values."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table of numeric values."
+        },
+        "validators": {
+          "E": "isTableOfNumbers"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table of numeric values."
+            }
+          ]
+        }
+      }
+    ]
+  }

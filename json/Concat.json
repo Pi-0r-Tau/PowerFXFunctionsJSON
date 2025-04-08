@@ -1,0 +1,52 @@
+{
+    "functions": [
+      {
+        "name": "Concat",
+        "description": "Concatenates the result of a formula applied across all records of a table, optionally using a specified separator.",
+        "syntax": "Concat(source, expr, [separator])",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to operate on."
+          },
+          {
+            "name": "expr",
+            "type": "String",
+            "description": "The formula to apply to each record."
+          },
+          {
+            "name": "separator",
+            "type": "String",
+            "description": "An optional separator to use between concatenated values."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "expr": "Must be a string expression.",
+          "separator": "Must be a string."
+        },
+        "validators": {
+          "source": "isTable",
+          "expr": "isString",
+          "separator": "isString"
+        },
+        "signatures": [
+          ["source", "expr"],
+          ["source", "expr", "separator"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least two parameters are required."
+            }
+          ]
+        }
+      }
+    ]
+  }

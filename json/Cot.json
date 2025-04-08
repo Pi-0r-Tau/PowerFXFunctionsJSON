@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "Cot",
+        "description": "Returns the cotangent of a number.",
+        "syntax": "Cot(number)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number for which to find the cotangent."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a numeric value."
+        },
+        "validators": {
+          "number": "isNumber"
+        },
+        "signatures": [
+          ["number"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a numeric value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "CotTable",
+        "description": "Computes the cotangent of each item in the input table.",
+        "syntax": "Cot(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table containing numeric values."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table of numeric values."
+        },
+        "validators": {
+          "E": "isTableOfNumbers"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table of numeric values."
+            }
+          ]
+        }
+      }
+    ]
+  }
