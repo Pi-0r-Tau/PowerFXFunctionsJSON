@@ -1,0 +1,300 @@
+{
+    "functions": [
+      {
+        "name": "ValueBaseFunction",
+        "description": "Abstract base class for functions that convert a string to a number.",
+        "syntax": "ValueBaseFunction(functionName, functionAbout, functionReturn)",
+        "parameters": [
+          {
+            "name": "functionName",
+            "type": "String",
+            "description": "The name of the function."
+          },
+          {
+            "name": "functionAbout",
+            "type": "StringGetter",
+            "description": "The description of the function."
+          },
+          {
+            "name": "functionReturn",
+            "type": "DType",
+            "description": "The return type of the function."
+          }
+        ],
+        "constraints": {
+          "functionName": "Must be a string.",
+          "functionAbout": "Must be a valid StringGetter.",
+          "functionReturn": "Must be a valid DType."
+        },
+        "validators": {
+          "functionName": "isString",
+          "functionAbout": "isStringGetter",
+          "functionReturn": "isDType"
+        },
+        "signatures": [
+          ["functionName", "functionAbout", "functionReturn"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Value",
+        "description": "Converts a string to a number.",
+        "syntax": "Value(arg, [language])",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "String",
+            "description": "The string to convert."
+          },
+          {
+            "name": "language",
+            "type": "String",
+            "description": "The language to use for conversion."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a string.",
+          "language": "Must be a string."
+        },
+        "validators": {
+          "arg": "isString",
+          "language": "isString"
+        },
+        "signatures": [
+          ["arg"],
+          ["arg", "language"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            },
+            {
+              "code": "InvalidLanguage",
+              "message": "The language must be a string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Decimal",
+        "description": "Converts a string to a decimal number.",
+        "syntax": "Decimal(arg, [language])",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "String",
+            "description": "The string to convert."
+          },
+          {
+            "name": "language",
+            "type": "String",
+            "description": "The language to use for conversion."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a string.",
+          "language": "Must be a string."
+        },
+        "validators": {
+          "arg": "isString",
+          "language": "isString"
+        },
+        "signatures": [
+          ["arg"],
+          ["arg", "language"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            },
+            {
+              "code": "InvalidLanguage",
+              "message": "The language must be a string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Float",
+        "description": "Converts a string to a float number.",
+        "syntax": "Float(arg, [language])",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "String",
+            "description": "The string to convert."
+          },
+          {
+            "name": "language",
+            "type": "String",
+            "description": "The language to use for conversion."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a string.",
+          "language": "Must be a string."
+        },
+        "validators": {
+          "arg": "isString",
+          "language": "isString"
+        },
+        "signatures": [
+          ["arg"],
+          ["arg", "language"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            },
+            {
+              "code": "InvalidLanguage",
+              "message": "The language must be a string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "ValueBaseFunction_UO",
+        "description": "Abstract base class for functions that convert an untyped object to a number.",
+        "syntax": "ValueBaseFunction_UO(functionName, functionAbout, resultType)",
+        "parameters": [
+          {
+            "name": "functionName",
+            "type": "String",
+            "description": "The name of the function."
+          },
+          {
+            "name": "functionAbout",
+            "type": "StringGetter",
+            "description": "The description of the function."
+          },
+          {
+            "name": "resultType",
+            "type": "DType",
+            "description": "The return type of the function."
+          }
+        ],
+        "constraints": {
+          "functionName": "Must be a string.",
+          "functionAbout": "Must be a valid StringGetter.",
+          "resultType": "Must be a valid DType."
+        },
+        "validators": {
+          "functionName": "isString",
+          "functionAbout": "isStringGetter",
+          "resultType": "isDType"
+        },
+        "signatures": [
+          ["functionName", "functionAbout", "resultType"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            }
+          ]
+        }
+      },
+      {
+        "name": "ValueFunction_UO",
+        "description": "Converts an untyped object to a number.",
+        "syntax": "Value(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "UntypedObject",
+            "description": "The untyped object to convert."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be an untyped object."
+        },
+        "validators": {
+          "arg": "isUntypedObject"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be an untyped object."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Float_UO",
+        "description": "Converts an untyped object to a float number.",
+        "syntax": "Float(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "UntypedObject",
+            "description": "The untyped object to convert."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be an untyped object."
+        },
+        "validators": {
+          "arg": "isUntypedObject"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be an untyped object."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Decimal_UO",
+        "description": "Converts an untyped object to a decimal number.",
+        "syntax": "Decimal(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "UntypedObject",
+            "description": "The untyped object to convert."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be an untyped object."
+        },
+        "validators": {
+          "arg": "isUntypedObject"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be an untyped object."
+            }
+          ]
+        }
+      }
+    ]
+  }
