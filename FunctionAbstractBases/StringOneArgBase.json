@@ -1,0 +1,97 @@
+{
+    "functions": [
+      {
+        "name": "StringOneArgFunction",
+        "description": "Abstract base class for functions that take a single string argument.",
+        "syntax": "StringOneArgFunction(name, description, category, returnType)",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "String",
+            "description": "The name of the function."
+          },
+          {
+            "name": "description",
+            "type": "StringGetter",
+            "description": "The description of the function."
+          },
+          {
+            "name": "category",
+            "type": "FunctionCategories",
+            "description": "The category of the function."
+          },
+          {
+            "name": "returnType",
+            "type": "DType",
+            "description": "The return type of the function."
+          }
+        ],
+        "constraints": {
+          "name": "Must be a string.",
+          "description": "Must be a valid StringGetter.",
+          "category": "Must be a valid FunctionCategories.",
+          "returnType": "Must be a valid DType."
+        },
+        "validators": {
+          "name": "isString",
+          "description": "isStringGetter",
+          "category": "isFunctionCategories",
+          "returnType": "isDType"
+        },
+        "signatures": [
+          ["name", "description", "category", "returnType"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            }
+          ]
+        }
+      },
+      {
+        "name": "StringOneArgTableFunction",
+        "description": "Abstract base class for functions that take a single table argument containing strings.",
+        "syntax": "StringOneArgTableFunction(name, description, category)",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "String",
+            "description": "The name of the function."
+          },
+          {
+            "name": "description",
+            "type": "StringGetter",
+            "description": "The description of the function."
+          },
+          {
+            "name": "category",
+            "type": "FunctionCategories",
+            "description": "The category of the function."
+          }
+        ],
+        "constraints": {
+          "name": "Must be a string.",
+          "description": "Must be a valid StringGetter.",
+          "category": "Must be a valid FunctionCategories."
+        },
+        "validators": {
+          "name": "isString",
+          "description": "isStringGetter",
+          "category": "isFunctionCategories"
+        },
+        "signatures": [
+          ["name", "description", "category"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            }
+          ]
+        }
+      }
+    ]
+  }

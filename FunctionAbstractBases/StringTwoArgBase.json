@@ -1,0 +1,47 @@
+{
+    "functions": [
+      {
+        "name": "StringTwoArgFunction",
+        "description": "Abstract base class for functions that take two string arguments.",
+        "syntax": "StringTwoArgFunction(name, description, returnType)",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "String",
+            "description": "The name of the function."
+          },
+          {
+            "name": "description",
+            "type": "StringGetter",
+            "description": "The description of the function."
+          },
+          {
+            "name": "returnType",
+            "type": "DType",
+            "description": "The return type of the function."
+          }
+        ],
+        "constraints": {
+          "name": "Must be a string.",
+          "description": "Must be a valid StringGetter.",
+          "returnType": "Must be a valid DType."
+        },
+        "validators": {
+          "name": "isString",
+          "description": "isStringGetter",
+          "returnType": "isDType"
+        },
+        "signatures": [
+          ["name", "description", "returnType"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            }
+          ]
+        }
+      }
+    ]
+  }
