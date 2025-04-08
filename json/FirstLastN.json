@@ -1,0 +1,81 @@
+{
+    "functions": [
+      {
+        "name": "FirstLastN",
+        "description": "Returns the first or last N records from a table.",
+        "syntax": "FirstLastN(source, [count])",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to retrieve the first or last N records from."
+          },
+          {
+            "name": "count",
+            "type": "Number",
+            "description": "The number of records to retrieve."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "count": "Must be a number."
+        },
+        "validators": {
+          "source": "isTable",
+          "count": "isNumber"
+        },
+        "signatures": [
+          ["source"],
+          ["source", "count"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            },
+            {
+              "code": "InvalidSchema",
+              "message": "The table must have exactly one column."
+            }
+          ]
+        }
+      },
+      {
+        "name": "FirstLastN_UO",
+        "description": "Returns the first or last N records from an untyped object.",
+        "syntax": "FirstLastN(arg, [count])",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "UntypedObject",
+            "description": "The untyped object to retrieve the first or last N records from."
+          },
+          {
+            "name": "count",
+            "type": "Number",
+            "description": "The number of records to retrieve."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be an untyped object.",
+          "count": "Must be a number."
+        },
+        "validators": {
+          "arg": "isUntypedObject",
+          "count": "isNumber"
+        },
+        "signatures": [
+          ["arg", "count"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be an untyped object."
+            }
+          ]
+        }
+      }
+    ]
+  }

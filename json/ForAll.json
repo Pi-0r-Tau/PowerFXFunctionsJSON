@@ -1,0 +1,84 @@
+{
+    "functions": [
+      {
+        "name": "ForAll",
+        "description": "Applies a formula to each record of a table.",
+        "syntax": "ForAll(source, formula)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to iterate over."
+          },
+          {
+            "name": "formula",
+            "type": "Formula",
+            "description": "The formula to apply to each record."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "formula": "Must be a valid formula."
+        },
+        "validators": {
+          "source": "isTable",
+          "formula": "isFormula"
+        },
+        "signatures": [
+          ["source", "formula"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            },
+            {
+              "code": "InvalidFormula",
+              "message": "The formula is invalid."
+            }
+          ]
+        }
+      },
+      {
+        "name": "ForAll_UO",
+        "description": "Applies a formula to each record of an untyped object.",
+        "syntax": "ForAll(arg, formula)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "UntypedObject",
+            "description": "The untyped object to iterate over."
+          },
+          {
+            "name": "formula",
+            "type": "Formula",
+            "description": "The formula to apply to each record."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be an untyped object.",
+          "formula": "Must be a valid formula."
+        },
+        "validators": {
+          "arg": "isUntypedObject",
+          "formula": "isFormula"
+        },
+        "signatures": [
+          ["arg", "formula"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be an untyped object."
+            },
+            {
+              "code": "InvalidFormula",
+              "message": "The formula is invalid."
+            }
+          ]
+        }
+      }
+    ]
+  }
