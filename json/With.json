@@ -1,0 +1,40 @@
+{
+    "functions": [
+      {
+        "name": "With",
+        "description": "Executes a function within a specified scope.",
+        "syntax": "With(scope, fn)",
+        "parameters": [
+          {
+            "name": "scope",
+            "type": "Object",
+            "description": "The scope to execute the function within."
+          },
+          {
+            "name": "fn",
+            "type": "Function",
+            "description": "The function to execute."
+          }
+        ],
+        "constraints": {
+          "scope": "Must be an object.",
+          "fn": "Must be a function."
+        },
+        "validators": {
+          "scope": "isObject",
+          "fn": "isFunction"
+        },
+        "signatures": [
+          ["scope", "fn"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            }
+          ]
+        }
+      }
+    ]
+  }

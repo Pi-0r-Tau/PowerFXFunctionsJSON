@@ -1,0 +1,89 @@
+{
+    "functions": [
+      {
+        "name": "VarP",
+        "description": "Calculates the variance for a population.",
+        "syntax": "VarP(arg1, arg2, ..., argN)",
+        "parameters": [
+          {
+            "name": "arg1",
+            "type": "Number",
+            "description": "The first number."
+          },
+          {
+            "name": "arg2",
+            "type": "Number",
+            "description": "The second number."
+          },
+          {
+            "name": "argN",
+            "type": "Number",
+            "description": "The Nth number."
+          }
+        ],
+        "constraints": {
+          "arg1": "Must be a number.",
+          "arg2": "Must be a number.",
+          "argN": "Must be a number."
+        },
+        "validators": {
+          "arg1": "isNumber",
+          "arg2": "isNumber",
+          "argN": "isNumber"
+        },
+        "signatures": [
+          ["arg1"],
+          ["arg1", "arg2"],
+          ["arg1", "arg2", "arg3"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "VarPTable",
+        "description": "Calculates the variance for a population from a table based on a projection.",
+        "syntax": "VarP(source, projection)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to search."
+          },
+          {
+            "name": "projection",
+            "type": "Number",
+            "description": "The expression to evaluate for each record."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "projection": "Must be a number."
+        },
+        "validators": {
+          "source": "isTable",
+          "projection": "isNumber"
+        },
+        "signatures": [
+          ["source", "projection"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            },
+            {
+              "code": "InvalidProjection",
+              "message": "The projection must be a number."
+            }
+          ]
+        }
+      }
+    ]
+  }
