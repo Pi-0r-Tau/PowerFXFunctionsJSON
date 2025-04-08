@@ -1,0 +1,49 @@
+{
+    "functions": [
+      {
+        "name": "MinMax",
+        "description": "Returns the minimum or maximum value from a list of numbers.",
+        "syntax": "MinMax(arg1, arg2, ..., argN)",
+        "parameters": [
+          {
+            "name": "arg1",
+            "type": "Number",
+            "description": "The first number."
+          },
+          {
+            "name": "arg2",
+            "type": "Number",
+            "description": "The second number."
+          },
+          {
+            "name": "argN",
+            "type": "Number",
+            "description": "The Nth number."
+          }
+        ],
+        "constraints": {
+          "arg1": "Must be a number.",
+          "arg2": "Must be a number.",
+          "argN": "Must be a number."
+        },
+        "validators": {
+          "arg1": "isNumber",
+          "arg2": "isNumber",
+          "argN": "isNumber"
+        },
+        "signatures": [
+          ["arg1"],
+          ["arg1", "arg2"],
+          ["arg1", "arg2", "arg3"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      }
+    ]
+  }

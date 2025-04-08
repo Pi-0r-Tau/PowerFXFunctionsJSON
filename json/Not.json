@@ -1,0 +1,33 @@
+{
+    "functions": [
+      {
+        "name": "Not",
+        "description": "Performs logical negation on a boolean value.",
+        "syntax": "Not(value)",
+        "parameters": [
+          {
+            "name": "value",
+            "type": "Boolean",
+            "description": "The boolean value to negate."
+          }
+        ],
+        "constraints": {
+          "value": "Must be a boolean."
+        },
+        "validators": {
+          "value": "isBoolean"
+        },
+        "signatures": [
+          ["value"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a boolean."
+            }
+          ]
+        }
+      }
+    ]
+  }

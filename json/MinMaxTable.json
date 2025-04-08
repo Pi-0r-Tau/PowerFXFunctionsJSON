@@ -1,0 +1,44 @@
+{
+    "functions": [
+      {
+        "name": "MinMaxTable",
+        "description": "Returns the minimum or maximum value from a table based on a projection.",
+        "syntax": "MinMax(source, projection)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to search."
+          },
+          {
+            "name": "projection",
+            "type": "Number",
+            "description": "The expression to evaluate for each record."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "projection": "Must be a number."
+        },
+        "validators": {
+          "source": "isTable",
+          "projection": "isNumber"
+        },
+        "signatures": [
+          ["source", "projection"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            },
+            {
+              "code": "InvalidProjection",
+              "message": "The projection must be a number."
+            }
+          ]
+        }
+      }
+    ]
+  }

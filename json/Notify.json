@@ -1,0 +1,33 @@
+{
+    "functions": [
+      {
+        "name": "Notify",
+        "description": "Prints a message directly to the output.",
+        "syntax": "Notify(message)",
+        "parameters": [
+          {
+            "name": "message",
+            "type": "String",
+            "description": "The message to print."
+          }
+        ],
+        "constraints": {
+          "message": "Must be a string."
+        },
+        "validators": {
+          "message": "isString"
+        },
+        "signatures": [
+          ["message"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            }
+          ]
+        }
+      }
+    ]
+  }

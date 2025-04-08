@@ -1,0 +1,76 @@
+{
+    "functions": [
+      {
+        "name": "Mod",
+        "description": "Returns the remainder of a division operation.",
+        "syntax": "Mod(number, divisor)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number to be divided."
+          },
+          {
+            "name": "divisor",
+            "type": "Number",
+            "description": "The number by which to divide."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a number.",
+          "divisor": "Must be a number."
+        },
+        "validators": {
+          "number": "isNumber",
+          "divisor": "isNumber"
+        },
+        "signatures": [
+          ["number", "divisor"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "ModT",
+        "description": "Returns the remainder of a division operation for each number in a table.",
+        "syntax": "Mod(number, divisor)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Table",
+            "description": "The table of numbers to be divided."
+          },
+          {
+            "name": "divisor",
+            "type": "Table",
+            "description": "The table of divisors."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a table.",
+          "divisor": "Must be a table."
+        },
+        "validators": {
+          "number": "isTable",
+          "divisor": "isTable"
+        },
+        "signatures": [
+          ["number", "divisor"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

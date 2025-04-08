@@ -1,0 +1,108 @@
+{
+    "functions": [
+      {
+        "name": "Mid",
+        "description": "Returns a substring from a string starting at a specified position.",
+        "syntax": "Mid(source, start, [count])",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "String",
+            "description": "The string to extract from."
+          },
+          {
+            "name": "start",
+            "type": "Number",
+            "description": "The starting position of the substring."
+          },
+          {
+            "name": "count",
+            "type": "Number",
+            "description": "The number of characters to extract."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a string.",
+          "start": "Must be a number.",
+          "count": "Must be a number."
+        },
+        "validators": {
+          "source": "isString",
+          "start": "isNumber",
+          "count": "isNumber"
+        },
+        "signatures": [
+          ["source", "start"],
+          ["source", "start", "count"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            },
+            {
+              "code": "InvalidStart",
+              "message": "The start must be a number."
+            },
+            {
+              "code": "InvalidCount",
+              "message": "The count must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "MidT",
+        "description": "Returns a substring from each string in a table starting at a specified position.",
+        "syntax": "Mid(source, start, [count])",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table of strings to extract from."
+          },
+          {
+            "name": "start",
+            "type": "Number",
+            "description": "The starting position of the substring."
+          },
+          {
+            "name": "count",
+            "type": "Number",
+            "description": "The number of characters to extract."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "start": "Must be a number.",
+          "count": "Must be a number."
+        },
+        "validators": {
+          "source": "isTable",
+          "start": "isNumber",
+          "count": "isNumber"
+        },
+        "signatures": [
+          ["source", "start"],
+          ["source", "start", "count"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            },
+            {
+              "code": "InvalidStart",
+              "message": "The start must be a number."
+            },
+            {
+              "code": "InvalidCount",
+              "message": "The count must be a number."
+            }
+          ]
+        }
+      }
+    ]
+  }
