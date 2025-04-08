@@ -1,0 +1,54 @@
+{
+    "functions": [
+      {
+        "name": "RGBA",
+        "description": "Creates a color value from red, green, blue, and alpha components.",
+        "syntax": "RGBA(red, green, blue, alpha)",
+        "parameters": [
+          {
+            "name": "red",
+            "type": "Number",
+            "description": "The red component of the color."
+          },
+          {
+            "name": "green",
+            "type": "Number",
+            "description": "The green component of the color."
+          },
+          {
+            "name": "blue",
+            "type": "Number",
+            "description": "The blue component of the color."
+          },
+          {
+            "name": "alpha",
+            "type": "Number",
+            "description": "The alpha (transparency) component of the color."
+          }
+        ],
+        "constraints": {
+          "red": "Must be a number.",
+          "green": "Must be a number.",
+          "blue": "Must be a number.",
+          "alpha": "Must be a number."
+        },
+        "validators": {
+          "red": "isNumber",
+          "green": "isNumber",
+          "blue": "isNumber",
+          "alpha": "isNumber"
+        },
+        "signatures": [
+          ["red", "green", "blue", "alpha"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      }
+    ]
+  }

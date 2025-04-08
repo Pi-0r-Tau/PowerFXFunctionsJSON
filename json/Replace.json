@@ -1,0 +1,128 @@
+{
+    "functions": [
+      {
+        "name": "Replace",
+        "description": "Replaces part of a string with another string.",
+        "syntax": "Replace(source, start, count, replacement)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "String",
+            "description": "The string to modify."
+          },
+          {
+            "name": "start",
+            "type": "Number",
+            "description": "The starting position of the substring to replace."
+          },
+          {
+            "name": "count",
+            "type": "Number",
+            "description": "The number of characters to replace."
+          },
+          {
+            "name": "replacement",
+            "type": "String",
+            "description": "The string to replace with."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a string.",
+          "start": "Must be a number.",
+          "count": "Must be a number.",
+          "replacement": "Must be a string."
+        },
+        "validators": {
+          "source": "isString",
+          "start": "isNumber",
+          "count": "isNumber",
+          "replacement": "isString"
+        },
+        "signatures": [
+          ["source", "start", "count", "replacement"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            },
+            {
+              "code": "InvalidStart",
+              "message": "The start must be a number."
+            },
+            {
+              "code": "InvalidCount",
+              "message": "The count must be a number."
+            },
+            {
+              "code": "InvalidReplacement",
+              "message": "The replacement must be a string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "ReplaceT",
+        "description": "Replaces part of each string in a table with another string.",
+        "syntax": "Replace(source, start, count, replacement)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table of strings to modify."
+          },
+          {
+            "name": "start",
+            "type": "Number",
+            "description": "The starting position of the substring to replace."
+          },
+          {
+            "name": "count",
+            "type": "Number",
+            "description": "The number of characters to replace."
+          },
+          {
+            "name": "replacement",
+            "type": "String",
+            "description": "The string to replace with."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "start": "Must be a number.",
+          "count": "Must be a number.",
+          "replacement": "Must be a string."
+        },
+        "validators": {
+          "source": "isTable",
+          "start": "isNumber",
+          "count": "isNumber",
+          "replacement": "isString"
+        },
+        "signatures": [
+          ["source", "start", "count", "replacement"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            },
+            {
+              "code": "InvalidStart",
+              "message": "The start must be a number."
+            },
+            {
+              "code": "InvalidCount",
+              "message": "The count must be a number."
+            },
+            {
+              "code": "InvalidReplacement",
+              "message": "The replacement must be a string."
+            }
+          ]
+        }
+      }
+    ]
+  }

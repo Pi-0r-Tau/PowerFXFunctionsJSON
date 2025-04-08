@@ -1,0 +1,220 @@
+{
+    "functions": [
+      {
+        "name": "RoundScalar",
+        "description": "Rounds a number to a specified number of digits.",
+        "syntax": "Round(number, digits)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number to round."
+          },
+          {
+            "name": "digits",
+            "type": "Number",
+            "description": "The number of digits to round to."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a number.",
+          "digits": "Must be a number."
+        },
+        "validators": {
+          "number": "isNumber",
+          "digits": "isNumber"
+        },
+        "signatures": [
+          ["number", "digits"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "RoundUpScalar",
+        "description": "Rounds a number up to a specified number of digits.",
+        "syntax": "RoundUp(number, digits)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number to round up."
+          },
+          {
+            "name": "digits",
+            "type": "Number",
+            "description": "The number of digits to round up to."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a number.",
+          "digits": "Must be a number."
+        },
+        "validators": {
+          "number": "isNumber",
+          "digits": "isNumber"
+        },
+        "signatures": [
+          ["number", "digits"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "RoundDownScalar",
+        "description": "Rounds a number down to a specified number of digits.",
+        "syntax": "RoundDown(number, digits)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number to round down."
+          },
+          {
+            "name": "digits",
+            "type": "Number",
+            "description": "The number of digits to round down to."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a number.",
+          "digits": "Must be a number."
+        },
+        "validators": {
+          "number": "isNumber",
+          "digits": "isNumber"
+        },
+        "signatures": [
+          ["number", "digits"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "RoundTable",
+        "description": "Rounds each number in a table to a specified number of digits.",
+        "syntax": "Round(number, digits)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Table",
+            "description": "The table of numbers to round."
+          },
+          {
+            "name": "digits",
+            "type": "Number",
+            "description": "The number of digits to round to."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a table.",
+          "digits": "Must be a number."
+        },
+        "validators": {
+          "number": "isTable",
+          "digits": "isNumber"
+        },
+        "signatures": [
+          ["number", "digits"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      },
+      {
+        "name": "RoundUpTable",
+        "description": "Rounds each number in a table up to a specified number of digits.",
+        "syntax": "RoundUp(number, digits)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Table",
+            "description": "The table of numbers to round up."
+          },
+          {
+            "name": "digits",
+            "type": "Number",
+            "description": "The number of digits to round up to."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a table.",
+          "digits": "Must be a number."
+        },
+        "validators": {
+          "number": "isTable",
+          "digits": "isNumber"
+        },
+        "signatures": [
+          ["number", "digits"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      },
+      {
+        "name": "RoundDownTable",
+        "description": "Rounds each number in a table down to a specified number of digits.",
+        "syntax": "RoundDown(number, digits)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Table",
+            "description": "The table of numbers to round down."
+          },
+          {
+            "name": "digits",
+            "type": "Number",
+            "description": "The number of digits to round down to."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a table.",
+          "digits": "Must be a number."
+        },
+        "validators": {
+          "number": "isTable",
+          "digits": "isNumber"
+        },
+        "signatures": [
+          ["number", "digits"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

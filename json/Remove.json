@@ -1,0 +1,48 @@
+{
+    "functions": [
+      {
+        "name": "Remove",
+        "description": "Removes records from a data source.",
+        "syntax": "Remove(dataSource, record1 [, record2, … ])",
+        "parameters": [
+          {
+            "name": "dataSource",
+            "type": "Table",
+            "description": "The data source from which to remove records."
+          },
+          {
+            "name": "record1",
+            "type": "Record",
+            "description": "The first record to remove."
+          },
+          {
+            "name": "record2",
+            "type": "Record",
+            "description": "Additional records to remove."
+          }
+        ],
+        "constraints": {
+          "dataSource": "Must be a table.",
+          "record1": "Must be a record.",
+          "record2": "Must be a record."
+        },
+        "validators": {
+          "dataSource": "isTable",
+          "record1": "isRecord",
+          "record2": "isRecord"
+        },
+        "signatures": [
+          ["dataSource", "record1"],
+          ["dataSource", "record1", "record2"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameters must be a table and records."
+            }
+          ]
+        }
+      }
+    ]
+  }

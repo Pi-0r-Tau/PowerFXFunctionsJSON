@@ -1,0 +1,49 @@
+{
+    "functions": [
+      {
+        "name": "Sequence",
+        "description": "Generates a sequence of numbers.",
+        "syntax": "Sequence(records, start, step)",
+        "parameters": [
+          {
+            "name": "records",
+            "type": "Number",
+            "description": "The number of records to generate."
+          },
+          {
+            "name": "start",
+            "type": "Number",
+            "description": "The starting value of the sequence."
+          },
+          {
+            "name": "step",
+            "type": "Number",
+            "description": "The step value for the sequence."
+          }
+        ],
+        "constraints": {
+          "records": "Must be a number.",
+          "start": "Must be a number.",
+          "step": "Must be a number."
+        },
+        "validators": {
+          "records": "isNumber",
+          "start": "isNumber",
+          "step": "isNumber"
+        },
+        "signatures": [
+          ["records"],
+          ["records", "start"],
+          ["records", "start", "step"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      }
+    ]
+  }
