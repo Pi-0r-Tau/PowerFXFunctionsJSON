@@ -1,0 +1,33 @@
+{
+    "functions": [
+      {
+        "name": "OptionSetInfo",
+        "description": "Returns information about an OptionSet.",
+        "syntax": "OptionSetInfo(optionSetValue)",
+        "parameters": [
+          {
+            "name": "optionSetValue",
+            "type": "OptionSetValue",
+            "description": "The OptionSetValue to get information about."
+          }
+        ],
+        "constraints": {
+          "optionSetValue": "Must be an OptionSetValue."
+        },
+        "validators": {
+          "optionSetValue": "isOptionSetValue"
+        },
+        "signatures": [
+          ["optionSetValue"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be an OptionSetValue."
+            }
+          ]
+        }
+      }
+    ]
+  }
