@@ -1,0 +1,64 @@
+{
+    "functions": [
+      {
+        "name": "If",
+        "description": "Evaluates a condition and returns one value if the condition is true, and another value if it is false. Can include multiple condition/value pairs.",
+        "syntax": "If(condition1, value1, [condition2, value2, ..., [valueFalse]])",
+        "parameters": [
+          {
+            "name": "condition1",
+            "type": "Boolean",
+            "description": "The condition to evaluate as true or false."
+          },
+          {
+            "name": "value1",
+            "type": "Any",
+            "description": "The value to return if condition1 is true."
+          },
+          {
+            "name": "condition2",
+            "type": "Boolean",
+            "description": "Optional. An additional condition to evaluate if previous conditions are false."
+          },
+          {
+            "name": "value2",
+            "type": "Any",
+            "description": "Optional. The value to return if condition2 is true."
+          },
+          {
+            "name": "valueFalse",
+            "type": "Any",
+            "description": "Optional. The value to return if all conditions are false."
+          }
+        ],
+        "constraints": {
+          "condition1": "Must evaluate to true or false.",
+          "condition2": "Must evaluate to true or false.",
+          "value1": "Can be any type, but should be compatible with other result values.",
+          "value2": "Can be any type, but should be compatible with other result values.",
+          "valueFalse": "Can be any type, but should be compatible with other result values."
+        },
+        "validators": {
+          "condition1": "isBoolean",
+          "condition2": "isBoolean"
+        },
+        "signatures": [
+          ["condition1", "value1"],
+          ["condition1", "value1", "valueFalse"],
+          ["condition1", "value1", "condition2", "value2"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Condition parameters must be Boolean values."
+            },
+            {
+              "code": "TypeMismatch",
+              "message": "Value parameters have incompatible types."
+            }
+          ]
+        }
+      }
+    ]
+  }

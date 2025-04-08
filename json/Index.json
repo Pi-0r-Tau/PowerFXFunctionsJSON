@@ -1,0 +1,44 @@
+{
+    "functions": [
+      {
+        "name": "Index",
+        "description": "Returns the record at the specified index from a table.",
+        "syntax": "Index(source, n)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to retrieve the record from."
+          },
+          {
+            "name": "n",
+            "type": "Number",
+            "description": "The index of the record to retrieve."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "n": "Must be a number."
+        },
+        "validators": {
+          "source": "isTable",
+          "n": "isNumber"
+        },
+        "signatures": [
+          ["source", "n"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            },
+            {
+              "code": "InvalidIndex",
+              "message": "The index must be a number."
+            }
+          ]
+        }
+      }
+    ]
+  }

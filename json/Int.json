@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "Int",
+        "description": "Truncates a number by rounding toward negative infinity.",
+        "syntax": "Int(number)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number to truncate."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a number."
+        },
+        "validators": {
+          "number": "isNumber"
+        },
+        "signatures": [
+          ["number"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "IntTable",
+        "description": "Applies Int to each item in the input table.",
+        "syntax": "Int(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table of numbers to truncate."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table."
+        },
+        "validators": {
+          "E": "isTable"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

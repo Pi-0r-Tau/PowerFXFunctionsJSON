@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "Hex2Dec",
+        "description": "Converts a hexadecimal number to a decimal number.",
+        "syntax": "Hex2Dec(number)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "String",
+            "description": "The hexadecimal number to convert."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a string."
+        },
+        "validators": {
+          "number": "isString"
+        },
+        "signatures": [
+          ["number"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Hex2DecT",
+        "description": "Converts a table of hexadecimal numbers to decimal numbers.",
+        "syntax": "Hex2DecT(number)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Table",
+            "description": "The table of hexadecimal numbers to convert."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a table."
+        },
+        "validators": {
+          "number": "isTable"
+        },
+        "signatures": [
+          ["number"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

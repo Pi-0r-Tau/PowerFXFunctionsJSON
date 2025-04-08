@@ -1,0 +1,76 @@
+{
+    "functions": [
+      {
+        "name": "GUIDNoArg",
+        "description": "Generates a new GUID.",
+        "syntax": "GUID()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": []
+        }
+      },
+      {
+        "name": "GUIDPureFunction",
+        "description": "Generates a GUID from a string.",
+        "syntax": "GUID(GuidString)",
+        "parameters": [
+          {
+            "name": "GuidString",
+            "type": "String",
+            "description": "The string to convert to a GUID."
+          }
+        ],
+        "constraints": {
+          "GuidString": "Must be a string."
+        },
+        "validators": {
+          "GuidString": "isString"
+        },
+        "signatures": [
+          ["GuidString"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "GUIDPure_UO",
+        "description": "Generates a GUID from an untyped object.",
+        "syntax": "GUID(GuidString)",
+        "parameters": [
+          {
+            "name": "GuidString",
+            "type": "UntypedObject",
+            "description": "The untyped object to convert to a GUID."
+          }
+        ],
+        "constraints": {
+          "GuidString": "Must be an untyped object."
+        },
+        "validators": {
+          "GuidString": "isUntypedObject"
+        },
+        "signatures": [
+          ["GuidString"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be an untyped object."
+            }
+          ]
+        }
+      }
+    ]
+  }

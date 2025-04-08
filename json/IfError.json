@@ -1,0 +1,40 @@
+{
+    "functions": [
+      {
+        "name": "IfError",
+        "description": "Evaluates expressions and returns the first non-error result.",
+        "syntax": "IfError(arg1, [arg2, ...])",
+        "parameters": [
+          {
+            "name": "arg1",
+            "type": "Any",
+            "description": "The first expression to evaluate."
+          },
+          {
+            "name": "arg2",
+            "type": "Any",
+            "description": "The fallback expression if the first results in an error."
+          }
+        ],
+        "constraints": {
+          "arg1": "Must be a valid expression.",
+          "arg2": "Must be a valid expression."
+        },
+        "validators": {
+          "arg1": "isExpression",
+          "arg2": "isExpression"
+        },
+        "signatures": [
+          ["arg1", "arg2"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid expression."
+            }
+          ]
+        }
+      }
+    ]
+  }
