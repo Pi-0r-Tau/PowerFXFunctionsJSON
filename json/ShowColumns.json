@@ -1,0 +1,41 @@
+{
+    "functions": [
+      {
+        "name": "ShowColumns",
+        "description": "Displays specified columns from a table.",
+        "syntax": "ShowColumns(source, name, name, ...)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to display columns from."
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "description": "The name of the column to display."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "name": "Must be a string."
+        },
+        "validators": {
+          "source": "isTable",
+          "name": "isString"
+        },
+        "signatures": [
+          ["source", "name"],
+          ["source", "name", "name"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            }
+          ]
+        }
+      }
+    ]
+  }
