@@ -1,0 +1,86 @@
+{
+    "functions": [
+      {
+        "name": "FilterFunctionBase",
+        "description": "Abstract base class for all functions with scope, i.e., that take lambda parameters and participate in filter query server delegation.",
+        "syntax": "FilterFunctionBase(name, description, fc, returnType, maskLambdas, arityMin, arityMax, paramTypes)",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "String",
+            "description": "The name of the function."
+          },
+          {
+            "name": "description",
+            "type": "String",
+            "description": "The description of the function."
+          },
+          {
+            "name": "fc",
+            "type": "FunctionCategories",
+            "description": "The function categories."
+          },
+          {
+            "name": "returnType",
+            "type": "DType",
+            "description": "The return type of the function."
+          },
+          {
+            "name": "maskLambdas",
+            "type": "BigInteger",
+            "description": "The mask for lambda parameters."
+          },
+          {
+            "name": "arityMin",
+            "type": "Integer",
+            "description": "The minimum arity of the function."
+          },
+          {
+            "name": "arityMax",
+            "type": "Integer",
+            "description": "The maximum arity of the function."
+          },
+          {
+            "name": "paramTypes",
+            "type": "Array",
+            "description": "The parameter types."
+          }
+        ],
+        "constraints": {
+          "name": "Must be a string.",
+          "description": "Must be a string.",
+          "fc": "Must be a valid function category.",
+          "returnType": "Must be a valid return type.",
+          "maskLambdas": "Must be a valid BigInteger.",
+          "arityMin": "Must be an integer.",
+          "arityMax": "Must be an integer.",
+          "paramTypes": "Must be an array of valid parameter types."
+        },
+        "validators": {
+          "name": "isString",
+          "description": "isString",
+          "fc": "isValidFunctionCategory",
+          "returnType": "isValidReturnType",
+          "maskLambdas": "isBigInteger",
+          "arityMin": "isInteger",
+          "arityMax": "isInteger",
+          "paramTypes": "isArrayOfValidParameterTypes"
+        },
+        "signatures": [
+          ["name", "description", "fc", "returnType", "maskLambdas", "arityMin", "arityMax", "paramTypes"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "All parameters are required."
+            }
+          ]
+        }
+      }
+    ]
+  }
