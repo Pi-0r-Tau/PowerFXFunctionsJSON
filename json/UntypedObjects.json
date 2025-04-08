@@ -1,0 +1,73 @@
+{
+    "functions": [
+      {
+        "name": "ParseJSON",
+        "description": "Parses a JSON string and returns an untyped object.",
+        "syntax": "ParseJSON(jsonString)",
+        "parameters": [
+          {
+            "name": "jsonString",
+            "type": "String",
+            "description": "The JSON string to parse."
+          }
+        ],
+        "constraints": {
+          "jsonString": "Must be a string."
+        },
+        "validators": {
+          "jsonString": "isString"
+        },
+        "signatures": [
+          ["jsonString"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Index_UO",
+        "description": "Returns the record at the specified index from an untyped object.",
+        "syntax": "Index(arg, index)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "UntypedObject",
+            "description": "The untyped object to retrieve the record from."
+          },
+          {
+            "name": "index",
+            "type": "Number",
+            "description": "The index of the record to retrieve."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be an untyped object.",
+          "index": "Must be a number."
+        },
+        "validators": {
+          "arg": "isUntypedObject",
+          "index": "isNumber"
+        },
+        "signatures": [
+          ["arg", "index"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            },
+            {
+              "code": "InvalidIndex",
+              "message": "The index must be a number."
+            }
+          ]
+        }
+      }
+    ]
+  }

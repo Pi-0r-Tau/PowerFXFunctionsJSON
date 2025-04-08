@@ -1,0 +1,18 @@
+{
+    "functions": [
+      {
+        "name": "UTCToday",
+        "description": "Returns the current date in UTC.",
+        "syntax": "UTCToday()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": []
+        }
+      }
+    ]
+  }

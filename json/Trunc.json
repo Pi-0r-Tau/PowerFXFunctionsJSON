@@ -1,0 +1,78 @@
+{
+    "functions": [
+      {
+        "name": "Trunc",
+        "description": "Truncates a number by rounding toward zero.",
+        "syntax": "Trunc(number, digits)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number to truncate."
+          },
+          {
+            "name": "digits",
+            "type": "Number",
+            "description": "The number of digits to truncate to."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a number.",
+          "digits": "Must be a number."
+        },
+        "validators": {
+          "number": "isNumber",
+          "digits": "isNumber"
+        },
+        "signatures": [
+          ["number"],
+          ["number", "digits"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "TruncTable",
+        "description": "Truncates each number in a table by rounding toward zero.",
+        "syntax": "Trunc(number, digits)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Table",
+            "description": "The table of numbers to truncate."
+          },
+          {
+            "name": "digits",
+            "type": "Number",
+            "description": "The number of digits to truncate to."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a table.",
+          "digits": "Must be a number."
+        },
+        "validators": {
+          "number": "isTable",
+          "digits": "isNumber"
+        },
+        "signatures": [
+          ["number"],
+          ["number", "digits"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }
