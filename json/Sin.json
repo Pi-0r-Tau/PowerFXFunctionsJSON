@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "Sin",
+        "description": "Computes the sine of a number.",
+        "syntax": "Sin(number)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number to compute the sine for."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a number."
+        },
+        "validators": {
+          "number": "isNumber"
+        },
+        "signatures": [
+          ["number"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SinTable",
+        "description": "Computes the sine of each number in a table.",
+        "syntax": "Sin(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table of numbers to compute the sine for."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table."
+        },
+        "validators": {
+          "E": "isTable"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

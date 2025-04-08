@@ -1,0 +1,40 @@
+{
+    "functions": [
+      {
+        "name": "StartsWith",
+        "description": "Checks if the text starts with the specified string.",
+        "syntax": "StartsWith(text, start)",
+        "parameters": [
+          {
+            "name": "text",
+            "type": "String",
+            "description": "The text to check."
+          },
+          {
+            "name": "start",
+            "type": "String",
+            "description": "The string to check for at the start of the text."
+          }
+        ],
+        "constraints": {
+          "text": "Must be a string.",
+          "start": "Must be a string."
+        },
+        "validators": {
+          "text": "isString",
+          "start": "isString"
+        },
+        "signatures": [
+          ["text", "start"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            }
+          ]
+        }
+      }
+    ]
+  }

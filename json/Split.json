@@ -1,0 +1,40 @@
+{
+    "functions": [
+      {
+        "name": "Split",
+        "description": "Splits a text string into a table of substrings based on a separator.",
+        "syntax": "Split(text, separator)",
+        "parameters": [
+          {
+            "name": "text",
+            "type": "String",
+            "description": "The text to split."
+          },
+          {
+            "name": "separator",
+            "type": "String",
+            "description": "The separator to use for splitting the text."
+          }
+        ],
+        "constraints": {
+          "text": "Must be a string.",
+          "separator": "Must be a string."
+        },
+        "validators": {
+          "text": "isString",
+          "separator": "isString"
+        },
+        "signatures": [
+          ["text", "separator"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            }
+          ]
+        }
+      }
+    ]
+  }

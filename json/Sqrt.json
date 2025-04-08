@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "Sqrt",
+        "description": "Computes the square root of a number.",
+        "syntax": "Sqrt(number)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number to compute the square root for."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a number."
+        },
+        "validators": {
+          "number": "isNumber"
+        },
+        "signatures": [
+          ["number"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SqrtTable",
+        "description": "Computes the square root of each number in a table.",
+        "syntax": "Sqrt(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table of numbers to compute the square root for."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table."
+        },
+        "validators": {
+          "E": "isTable"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

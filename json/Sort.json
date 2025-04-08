@@ -1,0 +1,56 @@
+{
+    "functions": [
+      {
+        "name": "Sort",
+        "description": "Sorts the records of a table by using a formula to determine the values to sort by.",
+        "syntax": "Sort(source, formula, [order])",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table of records to sort."
+          },
+          {
+            "name": "formula",
+            "type": "Function",
+            "description": "A formula that determines the values to sort by."
+          },
+          {
+            "name": "order",
+            "type": "String",
+            "description": "Optional. The order to sort values: \"Ascending\" (default) or \"Descending\"."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "formula": "Must evaluate to a primitive value.",
+          "order": "Must be \"Ascending\" or \"Descending\"."
+        },
+        "validators": {
+          "source": "isTable",
+          "formula": "isPrimitive",
+          "order": "isSortOrderEnum"
+        },
+        "signatures": [
+          ["source", "formula"],
+          ["source", "formula", "order"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The source must be a table."
+            },
+            {
+              "code": "InvalidFormula",
+              "message": "The formula must evaluate to a primitive type."
+            },
+            {
+              "code": "InvalidSortOrder",
+              "message": "The order must be \"Ascending\" or \"Descending\"."
+            }
+          ]
+        }
+      }
+    ]
+  }
