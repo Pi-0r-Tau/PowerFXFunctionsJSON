@@ -1,0 +1,40 @@
+{
+    "functions": [
+      {
+        "name": "ClearCollect",
+        "description": "Combines the Clear and Collect functions to clear a collection and then add items to it.",
+        "syntax": "ClearCollect(collection, items)",
+        "parameters": [
+          {
+            "name": "collection",
+            "type": "Table",
+            "description": "The collection to clear."
+          },
+          {
+            "name": "items",
+            "type": "Table",
+            "description": "The items to add to the collection."
+          }
+        ],
+        "constraints": {
+          "collection": "Must be a table.",
+          "items": "Must be a table."
+        },
+        "validators": {
+          "collection": "isTable",
+          "items": "isTable"
+        },
+        "signatures": [
+          ["collection", "items"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Both parameters must be tables."
+            }
+          ]
+        }
+      }
+    ]
+  }

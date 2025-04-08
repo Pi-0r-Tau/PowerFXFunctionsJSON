@@ -1,0 +1,48 @@
+{
+    "functions": [
+      {
+        "name": "Coalesce",
+        "description": "Returns the first non-null value from a list of expressions.",
+        "syntax": "Coalesce(expression1, expression2, ..., expressionN)",
+        "parameters": [
+          {
+            "name": "expression1",
+            "type": "Any",
+            "description": "The first expression to evaluate."
+          },
+          {
+            "name": "expression2",
+            "type": "Any",
+            "description": "The second expression to evaluate."
+          }
+
+        ],
+        "constraints": {
+          "expression1": "Can be any data type.",
+          "expression2": "Can be any data type."
+        },
+        "validators": {
+          "expression1": "isAny",
+          "expression2": "isAny"
+        },
+        "signatures": [
+          ["expression1"],
+          ["expression1", "expression2"],
+          ["expression1", "expression2", "expression3"]
+
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least one parameter is required."
+            }
+          ]
+        }
+      }
+    ]
+  }

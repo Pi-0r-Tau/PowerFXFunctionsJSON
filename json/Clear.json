@@ -1,0 +1,33 @@
+{
+    "functions": [
+      {
+        "name": "Clear",
+        "description": "Clears all items from the specified collection.",
+        "syntax": "Clear(collection)",
+        "parameters": [
+          {
+            "name": "collection",
+            "type": "Table",
+            "description": "The collection to clear."
+          }
+        ],
+        "constraints": {
+          "collection": "Must be a table."
+        },
+        "validators": {
+          "collection": "isTable"
+        },
+        "signatures": [
+          ["collection"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

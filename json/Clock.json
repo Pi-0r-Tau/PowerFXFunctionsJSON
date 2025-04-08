@@ -1,0 +1,61 @@
+{
+    "functions": [
+      {
+        "name": "AmPm",
+        "description": "Returns a table of AM/PM values.",
+        "syntax": "Clock.AmPm()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "No parameters are expected for this function."
+            }
+          ]
+        }
+      },
+      {
+        "name": "AmPmShort",
+        "description": "Returns a table of short AM/PM values.",
+        "syntax": "Clock.AmPmShort()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "No parameters are expected for this function."
+            }
+          ]
+        }
+      },
+      {
+        "name": "IsClock24",
+        "description": "Returns whether the clock is in 24-hour format.",
+        "syntax": "Clock.IsClock24()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "No parameters are expected for this function."
+            }
+          ]
+        }
+      }
+    ]
+  }

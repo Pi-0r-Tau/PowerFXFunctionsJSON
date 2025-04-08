@@ -1,0 +1,40 @@
+{
+    "functions": [
+      {
+        "name": "Collect",
+        "description": "Adds items to a collection.",
+        "syntax": "Collect(collection, items)",
+        "parameters": [
+          {
+            "name": "collection",
+            "type": "Table",
+            "description": "The collection to add items to."
+          },
+          {
+            "name": "items",
+            "type": "Record",
+            "description": "The items to add to the collection."
+          }
+        ],
+        "constraints": {
+          "collection": "Must be a table.",
+          "items": "Must be a record."
+        },
+        "validators": {
+          "collection": "isTable",
+          "items": "isRecord"
+        },
+        "signatures": [
+          ["collection", "items"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameters must be a table and a record."
+            }
+          ]
+        }
+      }
+    ]
+  }

@@ -1,0 +1,47 @@
+{
+    "functions": [
+      {
+        "name": "ColorFadeT",
+        "description": "Fades a color or a table of colors by a specified amount.",
+        "syntax": "ColorFade(color, fadeDelta)",
+        "parameters": [
+          {
+            "name": "color",
+            "type": "Color or Table of Colors",
+            "description": "The color or table of colors to fade."
+          },
+          {
+            "name": "fadeDelta",
+            "type": "Number or Table of Numbers",
+            "description": "The amount to fade the color (-1 to 1) or a table of fade amounts."
+          }
+        ],
+        "constraints": {
+          "color": "Must be a valid color value or a table of color values.",
+          "fadeDelta": "Must be a numeric value between -1 and 1 or a table of numeric values."
+        },
+        "validators": {
+          "color": "isColorOrTableOfColors",
+          "fadeDelta": "isNumberInRangeOrTableOfNumbers(-1, 1)"
+        },
+        "signatures": [
+          ["color", "fadeDelta"]
+        ],
+        "requiredEnums": [
+          "ColorEnum"
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "InvalidRange",
+              "message": "The fadeDelta parameter must be between -1 and 1."
+            }
+          ]
+        }
+      }
+    ]
+  }
