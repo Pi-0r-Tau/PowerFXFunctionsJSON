@@ -1,0 +1,961 @@
+{
+    "functions": [
+      {
+        "name": "Date",
+        "description": "Creates a date value from year, month, and day components.",
+        "syntax": "Date(year, month, day)",
+        "parameters": [
+          {
+            "name": "year",
+            "type": "Number",
+            "description": "The year component of the date."
+          },
+          {
+            "name": "month",
+            "type": "Number",
+            "description": "The month component of the date (1-12)."
+          },
+          {
+            "name": "day",
+            "type": "Number",
+            "description": "The day component of the date."
+          }
+        ],
+        "constraints": {
+          "year": "Must be a number.",
+          "month": "Must be a number.",
+          "day": "Must be a number."
+        },
+        "validators": {
+          "year": "isNumber",
+          "month": "isNumber",
+          "day": "isNumber"
+        },
+        "signatures": [
+          ["year", "month", "day"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be numbers."
+            },
+            {
+              "code": "InvalidDateValue",
+              "message": "The provided values do not form a valid date."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Time",
+        "description": "Creates a time value from hours, minutes, and seconds components.",
+        "syntax": "Time(hour, minute, second [, millisecond])",
+        "parameters": [
+          {
+            "name": "hour",
+            "type": "Number",
+            "description": "The hours component of the time (0-23)."
+          },
+          {
+            "name": "minute",
+            "type": "Number",
+            "description": "The minutes component of the time (0-59)."
+          },
+          {
+            "name": "second",
+            "type": "Number",
+            "description": "The seconds component of the time (0-59)."
+          },
+          {
+            "name": "millisecond",
+            "type": "Number",
+            "description": "The optional milliseconds component of the time (0-999)."
+          }
+        ],
+        "constraints": {
+          "hour": "Must be a number between 0 and 23.",
+          "minute": "Must be a number between 0 and 59.",
+          "second": "Must be a number between 0 and 59.",
+          "millisecond": "Must be a number between 0 and 999."
+        },
+        "validators": {
+          "hour": "isNumber",
+          "minute": "isNumber",
+          "second": "isNumber",
+          "millisecond": "isNumber"
+        },
+        "signatures": [
+          ["hour", "minute", "second"],
+          ["hour", "minute", "second", "millisecond"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be numbers."
+            },
+            {
+              "code": "InvalidTimeValue",
+              "message": "The provided values do not form a valid time."
+            }
+          ]
+        }
+      },
+      {
+        "name": "DateTime",
+        "description": "Creates a date and time value from individual components.",
+        "syntax": "DateTime(year, month, day, hour, minute, second [, millisecond])",
+        "parameters": [
+          {
+            "name": "year",
+            "type": "Number",
+            "description": "The year component."
+          },
+          {
+            "name": "month",
+            "type": "Number",
+            "description": "The month component (1-12)."
+          },
+          {
+            "name": "day",
+            "type": "Number",
+            "description": "The day component."
+          },
+          {
+            "name": "hour",
+            "type": "Number",
+            "description": "The hours component (0-23)."
+          },
+          {
+            "name": "minute",
+            "type": "Number",
+            "description": "The minutes component (0-59)."
+          },
+          {
+            "name": "second",
+            "type": "Number",
+            "description": "The seconds component (0-59)."
+          },
+          {
+            "name": "millisecond",
+            "type": "Number",
+            "description": "The optional milliseconds component (0-999)."
+          }
+        ],
+        "constraints": {
+          "year": "Must be a number.",
+          "month": "Must be a number between 1 and 12.",
+          "day": "Must be a number and valid for the given month and year.",
+          "hour": "Must be a number between 0 and 23.",
+          "minute": "Must be a number between 0 and 59.",
+          "second": "Must be a number between 0 and 59.",
+          "millisecond": "Must be a number between 0 and 999."
+        },
+        "validators": {
+          "year": "isNumber",
+          "month": "isNumber",
+          "day": "isNumber",
+          "hour": "isNumber",
+          "minute": "isNumber",
+          "second": "isNumber",
+          "millisecond": "isNumber"
+        },
+        "signatures": [
+          ["year", "month", "day", "hour", "minute", "second"],
+          ["year", "month", "day", "hour", "minute", "second", "millisecond"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be numbers."
+            },
+            {
+              "code": "InvalidDateTimeValue",
+              "message": "The provided values do not form a valid date and time."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Year",
+        "description": "Returns the year component of a date/time value.",
+        "syntax": "Year(dateTime)",
+        "parameters": [
+          {
+            "name": "dateTime",
+            "type": "DateTime",
+            "description": "The date/time value from which to extract the year."
+          }
+        ],
+        "constraints": {
+          "dateTime": "Must be a date/time value."
+        },
+        "validators": {
+          "dateTime": "isDateTime"
+        },
+        "signatures": [
+          ["dateTime"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a date/time value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Month",
+        "description": "Returns the month component of a date/time value.",
+        "syntax": "Month(dateTime)",
+        "parameters": [
+          {
+            "name": "dateTime",
+            "type": "DateTime",
+            "description": "The date/time value from which to extract the month."
+          }
+        ],
+        "constraints": {
+          "dateTime": "Must be a date/time value."
+        },
+        "validators": {
+          "dateTime": "isDateTime"
+        },
+        "signatures": [
+          ["dateTime"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a date/time value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Day",
+        "description": "Returns the day component of a date/time value.",
+        "syntax": "Day(dateTime)",
+        "parameters": [
+          {
+            "name": "dateTime",
+            "type": "DateTime",
+            "description": "The date/time value from which to extract the day."
+          }
+        ],
+        "constraints": {
+          "dateTime": "Must be a date/time value."
+        },
+        "validators": {
+          "dateTime": "isDateTime"
+        },
+        "signatures": [
+          ["dateTime"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a date/time value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Hour",
+        "description": "Returns the hour component of a date/time value.",
+        "syntax": "Hour(dateTime)",
+        "parameters": [
+          {
+            "name": "dateTime",
+            "type": "DateTime",
+            "description": "The date/time value from which to extract the hour."
+          }
+        ],
+        "constraints": {
+          "dateTime": "Must be a date/time value."
+        },
+        "validators": {
+          "dateTime": "isDateTime"
+        },
+        "signatures": [
+          ["dateTime"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a date/time value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Minute",
+        "description": "Returns the minute component of a date/time value.",
+        "syntax": "Minute(dateTime)",
+        "parameters": [
+          {
+            "name": "dateTime",
+            "type": "DateTime",
+            "description": "The date/time value from which to extract the minute."
+          }
+        ],
+        "constraints": {
+          "dateTime": "Must be a date/time value."
+        },
+        "validators": {
+          "dateTime": "isDateTime"
+        },
+        "signatures": [
+          ["dateTime"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a date/time value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Second",
+        "description": "Returns the second component of a date/time value.",
+        "syntax": "Second(dateTime)",
+        "parameters": [
+          {
+            "name": "dateTime",
+            "type": "DateTime",
+            "description": "The date/time value from which to extract the second."
+          }
+        ],
+        "constraints": {
+          "dateTime": "Must be a date/time value."
+        },
+        "validators": {
+          "dateTime": "isDateTime"
+        },
+        "signatures": [
+          ["dateTime"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a date/time value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Weekday",
+        "description": "Returns the weekday number for a given date.",
+        "syntax": "Weekday(date, [startOfWeek])",
+        "parameters": [
+          {
+            "name": "date",
+            "type": "DateTime",
+            "description": "The date value to evaluate."
+          },
+          {
+            "name": "startOfWeek",
+            "type": "Number",
+            "description": "Optional. Specifies which day is considered the first day of the week."
+          }
+        ],
+        "constraints": {
+          "date": "Must be a date/time value.",
+          "startOfWeek": "Must be a number representing a valid start of week option."
+        },
+        "validators": {
+          "date": "isDateTime",
+          "startOfWeek": "isStartOfWeekEnum"
+        },
+        "signatures": [
+          ["date"],
+          ["date", "startOfWeek"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be of the correct type."
+            },
+            {
+              "code": "InvalidEnumValue",
+              "message": "The startOfWeek value must be a valid option."
+            }
+          ]
+        }
+      },
+      {
+        "name": "WeekNum",
+        "description": "Returns the week number for a given date.",
+        "syntax": "WeekNum(date, [startOfWeek])",
+        "parameters": [
+          {
+            "name": "date",
+            "type": "DateTime",
+            "description": "The date value to evaluate."
+          },
+          {
+            "name": "startOfWeek",
+            "type": "Number",
+            "description": "Optional. Specifies which day is considered the first day of the week."
+          }
+        ],
+        "constraints": {
+          "date": "Must be a date/time value.",
+          "startOfWeek": "Must be a number representing a valid start of week option."
+        },
+        "validators": {
+          "date": "isDateTime",
+          "startOfWeek": "isStartOfWeekEnum"
+        },
+        "signatures": [
+          ["date"],
+          ["date", "startOfWeek"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be of the correct type."
+            },
+            {
+              "code": "InvalidEnumValue",
+              "message": "The startOfWeek value must be a valid option."
+            }
+          ]
+        }
+      },
+      {
+        "name": "ISOWeekNum",
+        "description": "Returns the ISO week number for a given date.",
+        "syntax": "ISOWeekNum(date)",
+        "parameters": [
+          {
+            "name": "date",
+            "type": "DateTime",
+            "description": "The date value to evaluate."
+          }
+        ],
+        "constraints": {
+          "date": "Must be a date/time value."
+        },
+        "validators": {
+          "date": "isDateTime"
+        },
+        "signatures": [
+          ["date"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a date/time value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "EDate",
+        "description": "Returns a date that is the specified number of months before or after a given date.",
+        "syntax": "EDate(startDate, months)",
+        "parameters": [
+          {
+            "name": "startDate",
+            "type": "DateTime",
+            "description": "The start date."
+          },
+          {
+            "name": "months",
+            "type": "Number",
+            "description": "The number of months to add (positive) or subtract (negative)."
+          }
+        ],
+        "constraints": {
+          "startDate": "Must be a date/time value.",
+          "months": "Must be a number."
+        },
+        "validators": {
+          "startDate": "isDateTime",
+          "months": "isNumber"
+        },
+        "signatures": [
+          ["startDate", "months"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be of the correct type."
+            }
+          ]
+        }
+      },
+      {
+        "name": "EOMonth",
+        "description": "Returns the last day of the month that is the specified number of months before or after a given date.",
+        "syntax": "EOMonth(startDate, months)",
+        "parameters": [
+          {
+            "name": "startDate",
+            "type": "DateTime",
+            "description": "The start date."
+          },
+          {
+            "name": "months",
+            "type": "Number",
+            "description": "The number of months to add (positive) or subtract (negative)."
+          }
+        ],
+        "constraints": {
+          "startDate": "Must be a date/time value.",
+          "months": "Must be a number."
+        },
+        "validators": {
+          "startDate": "isDateTime",
+          "months": "isNumber"
+        },
+        "signatures": [
+          ["startDate", "months"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be of the correct type."
+            }
+          ]
+        }
+      },
+      {
+        "name": "DateValue",
+        "description": "Converts a date stored as text to a date value.",
+        "syntax": "DateValue(dateText, [languageCode])",
+        "parameters": [
+          {
+            "name": "dateText",
+            "type": "String",
+            "description": "A text representation of a date."
+          },
+          {
+            "name": "languageCode",
+            "type": "String",
+            "description": "Optional. The language code to use for parsing the date."
+          }
+        ],
+        "constraints": {
+          "dateText": "Must be a text that can be converted to a valid date.",
+          "languageCode": "Must be a valid language code string."
+        },
+        "validators": {
+          "dateText": "isString",
+          "languageCode": "isString"
+        },
+        "signatures": [
+          ["dateText"],
+          ["dateText", "languageCode"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be text values."
+            },
+            {
+              "code": "InvalidDateFormat",
+              "message": "The provided text cannot be converted to a valid date."
+            }
+          ]
+        }
+      },
+      {
+        "name": "TimeValue",
+        "description": "Converts a time stored as text to a time value.",
+        "syntax": "TimeValue(timeText, [languageCode])",
+        "parameters": [
+          {
+            "name": "timeText",
+            "type": "String",
+            "description": "A text representation of a time."
+          },
+          {
+            "name": "languageCode",
+            "type": "String",
+            "description": "Optional. The language code to use for parsing the time."
+          }
+        ],
+        "constraints": {
+          "timeText": "Must be a text that can be converted to a valid time.",
+          "languageCode": "Must be a valid language code string."
+        },
+        "validators": {
+          "timeText": "isString",
+          "languageCode": "isString"
+        },
+        "signatures": [
+          ["timeText"],
+          ["timeText", "languageCode"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be text values."
+            },
+            {
+              "code": "InvalidTimeFormat",
+              "message": "The provided text cannot be converted to a valid time."
+            }
+          ]
+        }
+      },
+      {
+        "name": "DateTimeValue",
+        "description": "Converts a date and time stored as text to a datetime value.",
+        "syntax": "DateTimeValue(dateTimeText, [languageCode])",
+        "parameters": [
+          {
+            "name": "dateTimeText",
+            "type": "String",
+            "description": "A text representation of a date and time."
+          },
+          {
+            "name": "languageCode",
+            "type": "String",
+            "description": "Optional. The language code to use for parsing the date and time."
+          }
+        ],
+        "constraints": {
+          "dateTimeText": "Must be a text that can be converted to a valid date and time.",
+          "languageCode": "Must be a valid language code string."
+        },
+        "validators": {
+          "dateTimeText": "isString",
+          "languageCode": "isString"
+        },
+        "signatures": [
+          ["dateTimeText"],
+          ["dateTimeText", "languageCode"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be text values."
+            },
+            {
+              "code": "InvalidDateTimeFormat",
+              "message": "The provided text cannot be converted to a valid date and time."
+            }
+          ]
+        }
+      },
+      {
+        "name": "DateAdd",
+        "description": "Adds a specified time interval to a date and returns the resulting date.",
+        "syntax": "DateAdd(timestamp, delta, [unit])",
+        "parameters": [
+          {
+            "name": "timestamp",
+            "type": "DateTime",
+            "description": "The date/time value to which to add the interval."
+          },
+          {
+            "name": "delta",
+            "type": "Number",
+            "description": "The number of intervals to add."
+          },
+          {
+            "name": "unit",
+            "type": "String",
+            "description": "Optional. The type of time interval to add (e.g., 'Days', 'Months', 'Years', etc.)."
+          }
+        ],
+        "constraints": {
+          "timestamp": "Must be a date/time value.",
+          "delta": "Must be a number.",
+          "unit": "Must be a valid time unit string."
+        },
+        "validators": {
+          "timestamp": "isDateTime",
+          "delta": "isNumber",
+          "unit": "isTimeUnitEnum"
+        },
+        "signatures": [
+          ["timestamp", "delta"],
+          ["timestamp", "delta", "unit"]
+        ],
+      "errorHandling": {
+        "errors": [
+          {
+            "code": "InvalidType",
+            "message": "Parameters must be of the correct type."
+          },
+          {
+            "code": "InvalidTimeUnit",
+            "message": "The unit parameter must be a valid time unit."
+          }
+        ]
+      }
+    },
+    {
+      "name": "DateAddT",
+      "description": "Adds a specified time interval to date values and returns the resulting dates in a table.",
+      "syntax": "DateAdd(timestamp, delta, [unit])",
+      "parameters": [
+        {
+          "name": "timestamp",
+          "type": "DateTime|Table",
+          "description": "The date/time value or table of date/time values to which to add the interval."
+        },
+        {
+          "name": "delta",
+          "type": "Number|Table",
+          "description": "The number or table of numbers representing intervals to add."
+        },
+        {
+          "name": "unit",
+          "type": "TimeUnit",
+          "description": "Optional. The type of time interval to add (e.g., 'Days', 'Months', 'Years')."
+        }
+      ],
+      "constraints": {
+        "timestamp": "Must be a date/time value or a single-column table of date/time values.",
+        "delta": "Must be a number or a single-column table of numbers.",
+        "unit": "Must be a valid time unit."
+      },
+      "validators": {
+        "timestamp": "isDateTimeOrDateTimeTable",
+        "delta": "isNumberOrNumberTable",
+        "unit": "isTimeUnitEnum"
+      },
+      "signatures": [
+        ["timestamp", "delta"],
+        ["timestamp", "delta", "unit"]
+      ],
+      "errorHandling": {
+        "errors": [
+          {
+            "code": "InvalidType",
+            "message": "Parameters must be of the correct type."
+          },
+          {
+            "code": "InvalidTimeUnit",
+            "message": "The unit parameter must be a valid time unit."
+          },
+          {
+            "code": "MissingTableArgument",
+            "message": "At least one parameter must be a table."
+          }
+        ]
+      }
+    },
+    {
+      "name": "DateDiff",
+      "description": "Returns the difference between two date values in the specified unit.",
+      "syntax": "DateDiff(startDate, endDate, [unit])",
+      "parameters": [
+        {
+          "name": "startDate",
+          "type": "DateTime",
+          "description": "The start date for the calculation."
+        },
+        {
+          "name": "endDate",
+          "type": "DateTime",
+          "description": "The end date for the calculation."
+        },
+        {
+          "name": "unit",
+          "type": "TimeUnit",
+          "description": "Optional. The unit of time to use for the difference (e.g., 'Days', 'Months', 'Years')."
+        }
+      ],
+      "constraints": {
+        "startDate": "Must be a date/time value.",
+        "endDate": "Must be a date/time value.",
+        "unit": "Must be a valid time unit."
+      },
+      "validators": {
+        "startDate": "isDateTime",
+        "endDate": "isDateTime",
+        "unit": "isTimeUnitEnum"
+      },
+      "signatures": [
+        ["startDate", "endDate"],
+        ["startDate", "endDate", "unit"]
+      ],
+      "errorHandling": {
+        "errors": [
+          {
+            "code": "InvalidType",
+            "message": "Parameters must be date/time values."
+          },
+          {
+            "code": "InvalidTimeUnit",
+            "message": "The unit parameter must be a valid time unit."
+          }
+        ]
+      }
+    },
+    {
+      "name": "DateDiffT",
+      "description": "Returns a table containing the difference between dates in the specified unit.",
+      "syntax": "DateDiff(startDate, endDate, [unit])",
+      "parameters": [
+        {
+          "name": "startDate",
+          "type": "DateTime|Table",
+          "description": "The start date or table of start dates for the calculation."
+        },
+        {
+          "name": "endDate",
+          "type": "DateTime|Table",
+          "description": "The end date or table of end dates for the calculation."
+        },
+        {
+          "name": "unit",
+          "type": "TimeUnit",
+          "description": "Optional. The unit of time to use for the difference (e.g., 'Days', 'Months', 'Years')."
+        }
+      ],
+      "constraints": {
+        "startDate": "Must be a date/time value or a single-column table of date/time values.",
+        "endDate": "Must be a date/time value or a single-column table of date/time values.",
+        "unit": "Must be a valid time unit."
+      },
+      "validators": {
+        "startDate": "isDateTimeOrDateTimeTable",
+        "endDate": "isDateTimeOrDateTimeTable",
+        "unit": "isTimeUnitEnum"
+      },
+      "signatures": [
+        ["startDate", "endDate"],
+        ["startDate", "endDate", "unit"]
+      ],
+      "errorHandling": {
+        "errors": [
+          {
+            "code": "InvalidType",
+            "message": "Parameters must be date/time values or tables of date/time values."
+          },
+          {
+            "code": "InvalidTimeUnit",
+            "message": "The unit parameter must be a valid time unit."
+          },
+          {
+            "code": "MissingTableArgument",
+            "message": "At least one parameter must be a table."
+          }
+        ]
+      }
+    },
+    {
+      "name": "DateValue_UO",
+      "description": "Converts an untyped object to a date value.",
+      "syntax": "DateValue(arg)",
+      "parameters": [
+        {
+          "name": "arg",
+          "type": "UntypedObject",
+          "description": "The untyped object to convert to a date."
+        }
+      ],
+      "constraints": {
+        "arg": "Must be an untyped object that can be converted to a valid date."
+      },
+      "validators": {
+        "arg": "isUntypedObject"
+      },
+      "signatures": [
+        ["arg"]
+      ],
+      "errorHandling": {
+        "errors": [
+          {
+            "code": "InvalidType",
+            "message": "The parameter must be an untyped object."
+          },
+          {
+            "code": "InvalidFormat",
+            "message": "The untyped object cannot be converted to a valid date."
+          }
+        ]
+      }
+    },
+    {
+      "name": "TimeValue_UO",
+      "description": "Converts an untyped object to a time value.",
+      "syntax": "TimeValue(arg)",
+      "parameters": [
+        {
+          "name": "arg",
+          "type": "UntypedObject",
+          "description": "The untyped object to convert to a time."
+        }
+      ],
+      "constraints": {
+        "arg": "Must be an untyped object that can be converted to a valid time."
+      },
+      "validators": {
+        "arg": "isUntypedObject"
+      },
+      "signatures": [
+        ["arg"]
+      ],
+      "errorHandling": {
+        "errors": [
+          {
+            "code": "InvalidType",
+            "message": "The parameter must be an untyped object."
+          },
+          {
+            "code": "InvalidFormat",
+            "message": "The untyped object cannot be converted to a valid time."
+          }
+        ]
+      }
+    },
+    {
+      "name": "DateTimeValue_UO",
+      "description": "Converts an untyped object to a datetime value.",
+      "syntax": "DateTimeValue(arg)",
+      "parameters": [
+        {
+          "name": "arg",
+          "type": "UntypedObject",
+          "description": "The untyped object to convert to a datetime."
+        }
+      ],
+      "constraints": {
+        "arg": "Must be an untyped object that can be converted to a valid datetime."
+      },
+      "validators": {
+        "arg": "isUntypedObject"
+      },
+      "signatures": [
+        ["arg"]
+      ],
+      "errorHandling": {
+        "errors": [
+          {
+            "code": "InvalidType",
+            "message": "The parameter must be an untyped object."
+          },
+          {
+            "code": "InvalidFormat",
+            "message": "The untyped object cannot be converted to a valid datetime."
+          }
+        ]
+      }
+    }
+  ]
+}
