@@ -1,0 +1,18 @@
+{
+    "functions": [
+      {
+        "name": "Pi",
+        "description": "Returns the value of Pi.",
+        "syntax": "Pi()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": []
+        }
+      }
+    ]
+  }

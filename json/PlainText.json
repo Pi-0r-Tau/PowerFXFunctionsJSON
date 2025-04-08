@@ -1,0 +1,33 @@
+{
+    "functions": [
+      {
+        "name": "PlainText",
+        "description": "Converts a string to plain text.",
+        "syntax": "PlainText(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "String",
+            "description": "The string to convert."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a string."
+        },
+        "validators": {
+          "arg": "isString"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            }
+          ]
+        }
+      }
+    ]
+  }

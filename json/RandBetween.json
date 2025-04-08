@@ -1,0 +1,40 @@
+{
+    "functions": [
+      {
+        "name": "RandBetween",
+        "description": "Generates a random number between two specified numbers.",
+        "syntax": "RandBetween(min, max)",
+        "parameters": [
+          {
+            "name": "min",
+            "type": "Number",
+            "description": "The minimum value."
+          },
+          {
+            "name": "max",
+            "type": "Number",
+            "description": "The maximum value."
+          }
+        ],
+        "constraints": {
+          "min": "Must be a number.",
+          "max": "Must be a number."
+        },
+        "validators": {
+          "min": "isNumber",
+          "max": "isNumber"
+        },
+        "signatures": [
+          ["min", "max"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      }
+    ]
+  }

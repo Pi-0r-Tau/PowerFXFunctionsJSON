@@ -1,0 +1,56 @@
+{
+    "functions": [
+      {
+        "name": "Patch",
+        "description": "Updates a record in a data source with new values.",
+        "syntax": "Patch(dataSource, baseRecord, changeRecord1 [, changeRecord2, … ])",
+        "parameters": [
+          {
+            "name": "dataSource",
+            "type": "Table",
+            "description": "The data source containing the record to update."
+          },
+          {
+            "name": "baseRecord",
+            "type": "Record",
+            "description": "The record to update."
+          },
+          {
+            "name": "changeRecord1",
+            "type": "Record",
+            "description": "The first record containing changes."
+          },
+          {
+            "name": "changeRecord2",
+            "type": "Record",
+            "description": "Additional records containing changes."
+          }
+        ],
+        "constraints": {
+          "dataSource": "Must be a table.",
+          "baseRecord": "Must be a record.",
+          "changeRecord1": "Must be a record.",
+          "changeRecord2": "Must be a record."
+        },
+        "validators": {
+          "dataSource": "isTable",
+          "baseRecord": "isRecord",
+          "changeRecord1": "isRecord",
+          "changeRecord2": "isRecord"
+        },
+        "signatures": [
+          ["dataSource", "baseRecord"],
+          ["dataSource", "baseRecord", "changeRecord1"],
+          ["dataSource", "baseRecord", "changeRecord1", "changeRecord2"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameters must be a table and records."
+            }
+          ]
+        }
+      }
+    ]
+  }

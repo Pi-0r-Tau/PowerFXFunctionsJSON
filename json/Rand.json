@@ -1,0 +1,18 @@
+{
+    "functions": [
+      {
+        "name": "Rand",
+        "description": "Generates a random number between 0 and 1.",
+        "syntax": "Rand()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": []
+        }
+      }
+    ]
+  }

@@ -1,0 +1,76 @@
+{
+    "functions": [
+      {
+        "name": "Power",
+        "description": "Computes the power of a number raised to another number.",
+        "syntax": "Power(number, exponent)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The base number."
+          },
+          {
+            "name": "exponent",
+            "type": "Number",
+            "description": "The exponent to raise the base number to."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a number.",
+          "exponent": "Must be a number."
+        },
+        "validators": {
+          "number": "isNumber",
+          "exponent": "isNumber"
+        },
+        "signatures": [
+          ["number", "exponent"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "PowerT",
+        "description": "Computes the power of each number in a table raised to another number.",
+        "syntax": "Power(number, exponent)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Table",
+            "description": "The table of base numbers."
+          },
+          {
+            "name": "exponent",
+            "type": "Table",
+            "description": "The table of exponents."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a table.",
+          "exponent": "Must be a table."
+        },
+        "validators": {
+          "number": "isTable",
+          "exponent": "isTable"
+        },
+        "signatures": [
+          ["number", "exponent"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

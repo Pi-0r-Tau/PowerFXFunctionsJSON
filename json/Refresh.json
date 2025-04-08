@@ -1,0 +1,37 @@
+{
+    "functions": [
+      {
+        "name": "Refresh",
+        "description": "Refreshes a data source,if the argument evaluates to a non-refreshable data source, such as a collection or excel table, the Refresh invocation will simply be a no-op in that case",
+        "syntax": "Refresh(source)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The data source to refresh."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table."
+        },
+        "validators": {
+          "source": "isTable"
+        },
+        "signatures": [
+          ["source"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            },
+            {
+              "code": "NonRefreshableSource",
+              "message": "The data source cannot be refreshed."
+            }
+          ]
+        }
+      }
+    ]
+  }
