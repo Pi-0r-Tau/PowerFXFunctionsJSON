@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "Char",
+        "description": "Returns the character specified by a number.",
+        "syntax": "Char(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "Number",
+            "description": "The number representing the character code."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a numeric value."
+        },
+        "validators": {
+          "arg": "isNumber"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a numeric value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "CharTable",
+        "description": "Returns a table of characters specified by numbers.",
+        "syntax": "Char(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table containing numeric values representing character codes."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table of numeric values."
+        },
+        "validators": {
+          "E": "isTableOfNumbers"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table of numeric values."
+            }
+          ]
+        }
+      }
+    ]
+  }

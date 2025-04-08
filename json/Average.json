@@ -1,0 +1,85 @@
+{
+    "functions": [
+      {
+        "name": "Average",
+        "description": "Returns the average of a set of numbers.",
+        "syntax": "Average(arg1, arg2, ..., argN)",
+        "parameters": [
+          {
+            "name": "arg1",
+            "type": "Number",
+            "description": "The first number to include in the average."
+          },
+          {
+            "name": "arg2",
+            "type": "Number",
+            "description": "The second number to include in the average."
+          }
+
+        ],
+        "constraints": {
+          "arg1": "Must be a numeric value.",
+          "arg2": "Must be a numeric value."
+        },
+        "validators": {
+          "arg1": "isNumber",
+          "arg2": "isNumber"
+        },
+        "signatures": [
+          ["arg1", "arg2", "...", "argN"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least one parameter is required."
+            }
+          ]
+        }
+      },
+      {
+        "name": "AverageTable",
+        "description": "Computes the average of a numeric column in a table.",
+        "syntax": "Average(source, projection)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table containing the numeric column."
+          },
+          {
+            "name": "projection",
+            "type": "Number",
+            "description": "The numeric column to average."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "projection": "Must be a numeric column."
+        },
+        "validators": {
+          "source": "isTable",
+          "projection": "isNumber"
+        },
+        "signatures": [
+          ["source", "projection"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "Both source and projection parameters are required."
+            }
+          ]
+        }
+      }
+    ]
+  }

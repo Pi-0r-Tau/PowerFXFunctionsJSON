@@ -1,0 +1,265 @@
+{
+    "functions": [
+      {
+        "name": "Boolean",
+        "description": "Converts a string to a boolean value.",
+        "syntax": "Boolean(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "String",
+            "description": "The string to convert to a boolean."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a string."
+        },
+        "validators": {
+          "arg": "isString"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "BooleanTable",
+        "description": "Converts each item in a table of strings to boolean values.",
+        "syntax": "Boolean(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table containing strings."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table of strings."
+        },
+        "validators": {
+          "E": "isTableOfStrings"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table of strings."
+            }
+          ]
+        }
+      },
+      {
+        "name": "BooleanN",
+        "description": "Converts a number to a boolean value.",
+        "syntax": "Boolean(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "Number",
+            "description": "The number to convert to a boolean."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a numeric value."
+        },
+        "validators": {
+          "arg": "isNumber"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a numeric value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "BooleanNTable",
+        "description": "Converts each item in a table of numbers to boolean values.",
+        "syntax": "Boolean(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table containing numeric values."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table of numeric values."
+        },
+        "validators": {
+          "E": "isTableOfNumbers"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table of numeric values."
+            }
+          ]
+        }
+      },
+      {
+        "name": "BooleanW",
+        "description": "Converts a decimal value to a boolean value.",
+        "syntax": "Boolean(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "Decimal",
+            "description": "The decimal value to convert to a boolean."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a decimal value."
+        },
+        "validators": {
+          "arg": "isDecimal"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a decimal value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "BooleanWTable",
+        "description": "Converts each item in a table of decimal values to boolean values.",
+        "syntax": "Boolean(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table containing decimal values."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table of decimal values."
+        },
+        "validators": {
+          "E": "isTableOfDecimals"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table of decimal values."
+            }
+          ]
+        }
+      },
+      {
+        "name": "BooleanB",
+        "description": "Converts a boolean value to a boolean value (identity function).",
+        "syntax": "Boolean(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "Boolean",
+            "description": "The boolean value."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a boolean value."
+        },
+        "validators": {
+          "arg": "isBoolean"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a boolean value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "BooleanBTable",
+        "description": "Converts each item in a table of boolean values to boolean values (identity function).",
+        "syntax": "Boolean(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table containing boolean values."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table of boolean values."
+        },
+        "validators": {
+          "E": "isTableOfBooleans"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table of boolean values."
+            }
+          ]
+        }
+      },
+      {
+        "name": "BooleanUO",
+        "description": "Converts an untyped object to a boolean value.",
+        "syntax": "Boolean(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "UntypedObject",
+            "description": "The untyped object to convert to a boolean."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be an untyped object."
+        },
+        "validators": {
+          "arg": "isUntypedObject"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be an untyped object."
+            }
+          ]
+        }
+      }
+    ]
+  }

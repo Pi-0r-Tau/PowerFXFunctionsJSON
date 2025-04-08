@@ -1,0 +1,80 @@
+{
+    "functions": [
+      {
+        "name": "MonthsLong",
+        "description": "Returns a table of long month names.",
+        "syntax": "Calendar.MonthsLong()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "No parameters are expected for this function."
+            }
+          ]
+        }
+      },
+      {
+        "name": "MonthsShort",
+        "description": "Returns a table of short month names.",
+        "syntax": "Calendar.MonthsShort()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "No parameters are expected for this function."
+            }
+          ]
+        }
+      },
+      {
+        "name": "WeekdaysLong",
+        "description": "Returns a table of long weekday names.",
+        "syntax": "Calendar.WeekdaysLong()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "No parameters are expected for this function."
+            }
+          ]
+        }
+      },
+      {
+        "name": "WeekdaysShort",
+        "description": "Returns a table of short weekday names.",
+        "syntax": "Calendar.WeekdaysShort()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "No parameters are expected for this function."
+            }
+          ]
+        }
+      }
+    ]
+  }

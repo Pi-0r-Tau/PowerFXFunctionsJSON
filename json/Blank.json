@@ -1,0 +1,23 @@
+{
+    "functions": [
+      {
+        "name": "Blank",
+        "description": "Returns a blank value.",
+        "syntax": "Blank()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "No parameters are expected for this function."
+            }
+          ]
+        }
+      }
+    ]
+  }
