@@ -1,0 +1,100 @@
+{
+    "functions": [
+      {
+        "name": "Match",
+        "description": "Matches a text against a regular expression.",
+        "syntax": "Match(text, regular_expression, [options])",
+        "parameters": [
+          {
+            "name": "text",
+            "type": "String",
+            "description": "The text to match."
+          },
+          {
+            "name": "regular_expression",
+            "type": "String",
+            "description": "The regular expression to match against."
+          },
+          {
+            "name": "options",
+            "type": "String",
+            "description": "Optional matching options."
+          }
+        ],
+        "constraints": {
+          "text": "Must be a string.",
+          "regular_expression": "Must be a string.",
+          "options": "Must be a string."
+        },
+        "validators": {
+          "text": "isString",
+          "regular_expression": "isString",
+          "options": "isString"
+        },
+        "signatures": [
+          ["text", "regular_expression"],
+          ["text", "regular_expression", "options"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            },
+            {
+              "code": "InvalidRegularExpression",
+              "message": "The regular expression must be a valid string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "MatchAll",
+        "description": "Matches all occurrences of a text against a regular expression.",
+        "syntax": "MatchAll(text, regular_expression, [options])",
+        "parameters": [
+          {
+            "name": "text",
+            "type": "String",
+            "description": "The text to match."
+          },
+          {
+            "name": "regular_expression",
+            "type": "String",
+            "description": "The regular expression to match against."
+          },
+          {
+            "name": "options",
+            "type": "String",
+            "description": "Optional matching options."
+          }
+        ],
+        "constraints": {
+          "text": "Must be a string.",
+          "regular_expression": "Must be a string.",
+          "options": "Must be a string."
+        },
+        "validators": {
+          "text": "isString",
+          "regular_expression": "isString",
+          "options": "isString"
+        },
+        "signatures": [
+          ["text", "regular_expression"],
+          ["text", "regular_expression", "options"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            },
+            {
+              "code": "InvalidRegularExpression",
+              "message": "The regular expression must be a valid string."
+            }
+          ]
+        }
+      }
+    ]
+  }
