@@ -1,0 +1,44 @@
+{
+    "functions": [
+      {
+        "name": "Atan2",
+        "description": "Returns the arc tangent of the quotient of its arguments.",
+        "syntax": "Atan2(x, y)",
+        "parameters": [
+          {
+            "name": "x",
+            "type": "Number",
+            "description": "The x-coordinate."
+          },
+          {
+            "name": "y",
+            "type": "Number",
+            "description": "The y-coordinate."
+          }
+        ],
+        "constraints": {
+          "x": "Must be a numeric value.",
+          "y": "Must be a numeric value."
+        },
+        "validators": {
+          "x": "isNumber",
+          "y": "isNumber"
+        },
+        "signatures": [
+          ["x", "y"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "Both x and y parameters are required."
+            }
+          ]
+        }
+      }
+    ]
+  }

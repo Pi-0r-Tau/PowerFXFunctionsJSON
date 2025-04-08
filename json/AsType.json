@@ -1,0 +1,44 @@
+{
+    "functions": [
+      {
+        "name": "AsType",
+        "description": "Converts a record to a specified type based on a table.",
+        "syntax": "AsType(record, table)",
+        "parameters": [
+          {
+            "name": "record",
+            "type": "Polymorphic or ActivityPointer",
+            "description": "The record to be converted."
+          },
+          {
+            "name": "table",
+            "type": "Table",
+            "description": "The table that defines the target type."
+          }
+        ],
+        "constraints": {
+          "record": "Must be a polymorphic type or an activity pointer.",
+          "table": "Must refer to a connected data source."
+        },
+        "validators": {
+          "record": "isPolymorphicOrActivityPointer",
+          "table": "isConnectedDataSource"
+        },
+        "signatures": [
+          ["record", "table"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "InvalidDataSource",
+              "message": "The table parameter must refer to a connected data source."
+            }
+          ]
+        }
+      }
+    ]
+  }
