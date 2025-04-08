@@ -1,0 +1,104 @@
+{
+    "functions": [
+      {
+        "name": "Text",
+        "description": "Converts a number, date, time, or datetime value to a text string in the specified format.",
+        "syntax": "Text(value, [format], [language])",
+        "parameters": [
+          {
+            "name": "value",
+            "type": "Number|String|DateTime|Date|Time",
+            "description": "The value to convert to text."
+          },
+          {
+            "name": "format",
+            "type": "String",
+            "description": "Optional. A string that defines the format to apply."
+          },
+          {
+            "name": "language",
+            "type": "String",
+            "description": "Optional. The language code to use for formatting."
+          }
+        ],
+        "constraints": {
+          "value": "Must be a number, string, date, time, or datetime value.",
+          "format": "Must be a valid format string.",
+          "language": "Must be a valid language code."
+        },
+        "validators": {
+          "value": "isNumberOrStringOrDateTime",
+          "format": "isString",
+          "language": "isString"
+        },
+        "signatures": [
+          ["value"],
+          ["value", "format"],
+          ["value", "format", "language"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The value must be a number, string, date, time, or datetime."
+            },
+            {
+              "code": "InvalidFormat",
+              "message": "The format string is not valid."
+            },
+            {
+              "code": "NotSupportedFormat",
+              "message": "The format is not supported for this type of value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Text_UO",
+        "description": "Converts an untyped object to a text string in the specified format.",
+        "syntax": "Text(value, [format], [language])",
+        "parameters": [
+          {
+            "name": "value",
+            "type": "UntypedObject",
+            "description": "The untyped object to convert to text."
+          },
+          {
+            "name": "format",
+            "type": "String",
+            "description": "Optional. A string that defines the format to apply."
+          },
+          {
+            "name": "language",
+            "type": "String",
+            "description": "Optional. The language code to use for formatting."
+          }
+        ],
+        "constraints": {
+          "value": "Must be an untyped object.",
+          "format": "Must be a valid format string.",
+          "language": "Must be a valid language code."
+        },
+        "validators": {
+          "value": "isUntypedObject",
+          "format": "isString",
+          "language": "isString"
+        },
+        "signatures": [
+          ["value"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The value must be an untyped object."
+            },
+            {
+              "code": "InvalidFormat",
+              "message": "The format string is not valid."
+            }
+          ]
+        }
+      }
+    ]
+  }

@@ -1,0 +1,34 @@
+{
+    "functions": [
+      {
+        "name": "TimeZoneOffset",
+        "description": "Returns the time zone offset of the current date and time or a specified date and time.",
+        "syntax": "TimeZoneOffset([dateTime])",
+        "parameters": [
+          {
+            "name": "dateTime",
+            "type": "DateTime",
+            "description": "The date and time to get the time zone offset for."
+          }
+        ],
+        "constraints": {
+          "dateTime": "Must be a valid DateTime."
+        },
+        "validators": {
+          "dateTime": "isDateTime"
+        },
+        "signatures": [
+          [],
+          ["dateTime"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid DateTime."
+            }
+          ]
+        }
+      }
+    ]
+  }

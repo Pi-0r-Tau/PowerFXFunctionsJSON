@@ -1,0 +1,65 @@
+{
+    "functions": [
+      {
+        "name": "Trace",
+        "description": "Writes a message and optional custom data to the trace log for debugging purposes.",
+        "syntax": "Trace(message, [severity], [customDimensions], [options])",
+        "parameters": [
+          {
+            "name": "message",
+            "type": "String",
+            "description": "The message to write to the trace log."
+          },
+          {
+            "name": "severity",
+            "type": "String",
+            "description": "Optional. The severity level of the trace (e.g., 'Information', 'Warning', 'Error')."
+          },
+          {
+            "name": "customDimensions",
+            "type": "Record",
+            "description": "Optional. A record containing additional custom data to include with the trace."
+          },
+          {
+            "name": "options",
+            "type": "String",
+            "description": "Optional. Settings that control trace behaviour (e.g., 'I' to ignore unsupported types)."
+          }
+        ],
+        "constraints": {
+          "message": "Must be a string.",
+          "severity": "Must be a valid trace severity value.",
+          "customDimensions": "Must be a record with supported property types.",
+          "options": "Must be a constant value with valid trace options."
+        },
+        "validators": {
+          "message": "isString",
+          "severity": "isTraceSeverityEnum",
+          "customDimensions": "isRecord",
+          "options": "isTraceOptionsEnum"
+        },
+        "signatures": [
+          ["message"],
+          ["message", "severity"],
+          ["message", "severity", "customDimensions"],
+          ["message", "severity", "customDimensions", "options"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be of the correct type."
+            },
+            {
+              "code": "InvalidCustomRecordType",
+              "message": "The custom dimensions record contains unsupported property types."
+            },
+            {
+              "code": "OptionsMustBeConstant",
+              "message": "The options parameter must be a constant value."
+            }
+          ]
+        }
+      }
+    ]
+  }

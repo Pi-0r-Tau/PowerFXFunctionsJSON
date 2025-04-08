@@ -1,0 +1,63 @@
+{
+    "functions": [
+      {
+        "name": "Switch",
+        "description": "Evaluates an expression against a list of values and returns the result corresponding to the first matching value, or an optional default value if no match is found.",
+        "syntax": "Switch(expression, value1, result1, [value2, result2, ..., valueN, resultN], [default])",
+        "parameters": [
+          {
+            "name": "expression",
+            "type": "Any",
+            "description": "The expression to evaluate against the value list."
+          },
+          {
+            "name": "value1",
+            "type": "Any",
+            "description": "The first value to compare with the expression."
+          },
+          {
+            "name": "result1",
+            "type": "Any",
+            "description": "The result to return if the expression matches value1."
+          },
+          {
+            "name": "value2",
+            "type": "Any",
+            "description": "Optional. The second value to compare with the expression."
+          },
+          {
+            "name": "result2",
+            "type": "Any",
+            "description": "Optional. The result to return if the expression matches value2."
+          },
+          {
+            "name": "default",
+            "type": "Any",
+            "description": "Optional. The result to return if the expression does not match any value."
+          }
+        ],
+        "constraints": {
+          "expression": "Must be comparable with all value parameters.",
+          "value1": "Must be comparable with the expression.",
+          "value2": "Must be comparable with the expression."
+        },
+        "validators": {},
+        "signatures": [
+          ["expression", "value1", "result1"],
+          ["expression", "value1", "result1", "default"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "TypeMismatch",
+              "message": "The expression and values must have compatible types."
+            },
+            {
+              "code": "TypeMismatch",
+              "message": "The result parameters have incompatible types."
+            }
+          ]
+        }
+      }
+    ]
+  }

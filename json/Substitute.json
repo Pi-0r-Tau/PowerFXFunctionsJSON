@@ -1,0 +1,114 @@
+{
+    "functions": [
+      {
+        "name": "Substitute",
+        "description": "Replaces occurrences of a substring within a string with another substring.",
+        "syntax": "Substitute(source, match, replacement, [instanceCount])",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "String",
+            "description": "The string to modify."
+          },
+          {
+            "name": "match",
+            "type": "String",
+            "description": "The substring to replace."
+          },
+          {
+            "name": "replacement",
+            "type": "String",
+            "description": "The substring to replace with."
+          },
+          {
+            "name": "instanceCount",
+            "type": "Number",
+            "description": "The number of occurrences to replace."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a string.",
+          "match": "Must be a string.",
+          "replacement": "Must be a string.",
+          "instanceCount": "Must be a number."
+        },
+        "validators": {
+          "source": "isString",
+          "match": "isString",
+          "replacement": "isString",
+          "instanceCount": "isNumber"
+        },
+        "signatures": [
+          ["source", "match", "replacement"],
+          ["source", "match", "replacement", "instanceCount"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            },
+            {
+              "code": "InvalidInstanceCount",
+              "message": "The instance count must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "SubstituteT",
+        "description": "Replaces occurrences of a substring within each string in a table with another substring.",
+        "syntax": "Substitute(source, match, replacement, [instanceCount])",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table of strings to modify."
+          },
+          {
+            "name": "match",
+            "type": "String",
+            "description": "The substring to replace."
+          },
+          {
+            "name": "replacement",
+            "type": "String",
+            "description": "The substring to replace with."
+          },
+          {
+            "name": "instanceCount",
+            "type": "Number",
+            "description": "The number of occurrences to replace."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "match": "Must be a string.",
+          "replacement": "Must be a string.",
+          "instanceCount": "Must be a number."
+        },
+        "validators": {
+          "source": "isTable",
+          "match": "isString",
+          "replacement": "isString",
+          "instanceCount": "isNumber"
+        },
+        "signatures": [
+          ["source", "match", "replacement"],
+          ["source", "match", "replacement", "instanceCount"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            },
+            {
+              "code": "InvalidInstanceCount",
+              "message": "The instance count must be a number."
+            }
+          ]
+        }
+      }
+    ]
+  }

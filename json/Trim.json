@@ -1,0 +1,120 @@
+{
+    "functions": [
+      {
+        "name": "Trim",
+        "description": "Removes all leading and trailing spaces from a string.",
+        "syntax": "Trim(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "String",
+            "description": "The string to trim."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a string."
+        },
+        "validators": {
+          "arg": "isString"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "TrimT",
+        "description": "Removes all leading and trailing spaces from each string in a table.",
+        "syntax": "Trim(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "Table",
+            "description": "The table of strings to trim."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a table."
+        },
+        "validators": {
+          "arg": "isTable"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      },
+      {
+        "name": "TrimEnds",
+        "description": "Removes all leading and trailing spaces from a string.",
+        "syntax": "TrimEnds(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "String",
+            "description": "The string to trim."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a string."
+        },
+        "validators": {
+          "arg": "isString"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "TrimEndsT",
+        "description": "Removes all leading and trailing spaces from each string in a table.",
+        "syntax": "TrimEnds(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "Table",
+            "description": "The table of strings to trim."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a table."
+        },
+        "validators": {
+          "arg": "isTable"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

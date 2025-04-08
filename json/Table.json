@@ -1,0 +1,68 @@
+{
+    "functions": [
+      {
+        "name": "Table",
+        "description": "Creates a table from a list of records.",
+        "syntax": "Table(rec, rec, ...)",
+        "parameters": [
+          {
+            "name": "rec",
+            "type": "Record",
+            "description": "The records to include in the table."
+          }
+        ],
+        "constraints": {
+          "rec": "Must be a record."
+        },
+        "validators": {
+          "rec": "isRecord"
+        },
+        "signatures": [
+          ["rec"],
+          ["rec", "rec"],
+          ["rec", "rec", "rec"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a record."
+            },
+            {
+              "code": "IncompatibleSchema",
+              "message": "The records must have compatible schemas."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Table_UO",
+        "description": "Creates a table from an untyped object.",
+        "syntax": "Table(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "UntypedObject",
+            "description": "The untyped object to convert to a table."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be an untyped object."
+        },
+        "validators": {
+          "arg": "isUntypedObject"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be an untyped object."
+            }
+          ]
+        }
+      }
+    ]
+  }

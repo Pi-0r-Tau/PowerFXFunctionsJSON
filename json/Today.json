@@ -1,0 +1,18 @@
+{
+    "functions": [
+      {
+        "name": "Today",
+        "description": "Returns the current date.",
+        "syntax": "Today()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": []
+        }
+      }
+    ]
+  }
