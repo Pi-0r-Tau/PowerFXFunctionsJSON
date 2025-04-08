@@ -1,0 +1,91 @@
+{
+    "functions": [
+      {
+        "name": "IsBlankFunctionBase",
+        "description": "Abstract base class for functions that check if a value is blank.",
+        "syntax": "IsBlank(expression)",
+        "parameters": [
+          {
+            "name": "expression",
+            "type": "Any",
+            "description": "The expression to check."
+          }
+        ],
+        "constraints": {
+          "expression": "Must be a valid expression."
+        },
+        "validators": {
+          "expression": "isExpression"
+        },
+        "signatures": [
+          ["expression"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid expression."
+            }
+          ]
+        }
+      },
+      {
+        "name": "IsBlank",
+        "description": "Checks if the given expression is blank.",
+        "syntax": "IsBlank(expression)",
+        "parameters": [
+          {
+            "name": "expression",
+            "type": "Any",
+            "description": "The expression to check."
+          }
+        ],
+        "constraints": {
+          "expression": "Must be a valid expression."
+        },
+        "validators": {
+          "expression": "isExpression"
+        },
+        "signatures": [
+          ["expression"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid expression."
+            }
+          ]
+        }
+      },
+      {
+        "name": "IsBlankOptionSetValueFunction",
+        "description": "Checks if the given OptionSetValue is blank.",
+        "syntax": "IsBlank(expression)",
+        "parameters": [
+          {
+            "name": "expression",
+            "type": "OptionSetValue",
+            "description": "The OptionSetValue to check."
+          }
+        ],
+        "constraints": {
+          "expression": "Must be a valid OptionSetValue."
+        },
+        "validators": {
+          "expression": "isOptionSetValue"
+        },
+        "signatures": [
+          ["expression"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid OptionSetValue."
+            }
+          ]
+        }
+      }
+    ]
+  }
