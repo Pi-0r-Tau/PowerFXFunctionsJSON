@@ -1,0 +1,56 @@
+{
+    "functions": [
+      {
+        "name": "Filter",
+        "description": "Returns a filtered table based on a condition.",
+        "syntax": "Filter(source, predicate1 [, predicate2, ...])",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to filter."
+          },
+          {
+            "name": "predicate1",
+            "type": "Boolean",
+            "description": "The condition to apply to each row."
+          }
+
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "predicate1": "Must be a boolean expression."
+        },
+        "validators": {
+          "source": "isTable",
+          "predicate1": "isBoolean"
+        },
+        "signatures": [
+          ["source", "predicate1"],
+          ["source", "predicate1", "predicate2"],
+          ["source", "predicate1", "predicate2", "predicate3"]
+
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least two parameters are required."
+            },
+            {
+              "code": "MultipleViews",
+              "message": "Only one view is expected."
+            },
+            {
+              "code": "ViewFromCurrentTableExpected",
+              "message": "The view must belong to the same datasource."
+            }
+          ]
+        }
+      }
+    ]
+  }

@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "Degrees",
+        "description": "Returns the degrees equivalent of an angle in radians.",
+        "syntax": "Degrees(number)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The angle in radians to convert to degrees."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a numeric value."
+        },
+        "validators": {
+          "number": "isNumber"
+        },
+        "signatures": [
+          ["number"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a numeric value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "DegreesTable",
+        "description": "Computes the degrees values of each item in the input table.",
+        "syntax": "Degrees(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table containing angles in radians."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table of numeric values."
+        },
+        "validators": {
+          "E": "isTableOfNumbers"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table of numeric values."
+            }
+          ]
+        }
+      }
+    ]
+  }

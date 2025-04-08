@@ -1,0 +1,44 @@
+{
+    "functions": [
+      {
+        "name": "EndsWith",
+        "description": "Checks if the text ends with the specified string.",
+        "syntax": "EndsWith(text, end)",
+        "parameters": [
+          {
+            "name": "text",
+            "type": "String",
+            "description": "The text to check."
+          },
+          {
+            "name": "end",
+            "type": "String",
+            "description": "The string to check for at the end of the text."
+          }
+        ],
+        "constraints": {
+          "text": "Must be a string.",
+          "end": "Must be a string."
+        },
+        "validators": {
+          "text": "isString",
+          "end": "isString"
+        },
+        "signatures": [
+          ["text", "end"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "Both text and end parameters are required."
+            }
+          ]
+        }
+      }
+    ]
+  }

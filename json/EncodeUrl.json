@@ -1,0 +1,33 @@
+{
+    "functions": [
+      {
+        "name": "EncodeUrl",
+        "description": "Encodes a URL string.",
+        "syntax": "EncodeUrl(url)",
+        "parameters": [
+          {
+            "name": "url",
+            "type": "String",
+            "description": "The URL string to encode."
+          }
+        ],
+        "constraints": {
+          "url": "Must be a valid URL string."
+        },
+        "validators": {
+          "url": "isString"
+        },
+        "signatures": [
+          ["url"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid URL string."
+            }
+          ]
+        }
+      }
+    ]
+  }

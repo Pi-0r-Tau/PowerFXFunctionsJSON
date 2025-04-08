@@ -1,0 +1,45 @@
+{
+    "functions": [
+      {
+        "name": "Error",
+        "description": "Generates an error with a specified message or record.",
+        "syntax": "Error([arg])",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "Any",
+            "description": "The error message or record."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a string, record, or table."
+        },
+        "validators": {
+          "arg": "isStringOrRecordOrTable"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string, record, or table."
+            },
+            {
+              "code": "MissingRequiredField",
+              "message": "The record must contain the 'Kind' field."
+            },
+            {
+              "code": "IrrelevantField",
+              "message": "The record contains irrelevant fields."
+            },
+            {
+              "code": "TypeMismatch",
+              "message": "The types of the fields in the record do not match the expected types."
+            }
+          ]
+        }
+      }
+    ]
+  }

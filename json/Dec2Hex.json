@@ -1,0 +1,86 @@
+{
+    "functions": [
+      {
+        "name": "Dec2Hex",
+        "description": "Converts a decimal number to a hexadecimal number.",
+        "syntax": "Dec2Hex(number, [places])",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The decimal number to convert."
+          },
+          {
+            "name": "places",
+            "type": "Number",
+            "description": "The number of characters to use. If omitted, the minimum number of characters necessary is used."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a numeric value.",
+          "places": "Must be a numeric value."
+        },
+        "validators": {
+          "number": "isNumber",
+          "places": "isNumber"
+        },
+        "signatures": [
+          ["number"],
+          ["number", "places"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least one parameter is required."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Dec2HexT",
+        "description": "Converts a table of decimal numbers to hexadecimal numbers.",
+        "syntax": "Dec2Hex(E, [places])",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table containing decimal numbers to convert."
+          },
+          {
+            "name": "places",
+            "type": "Number",
+            "description": "The number of characters to use. If omitted, the minimum number of characters necessary is used."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table of numeric values.",
+          "places": "Must be a numeric value."
+        },
+        "validators": {
+          "E": "isTableOfNumbers",
+          "places": "isNumber"
+        },
+        "signatures": [
+          ["E"],
+          ["E", "places"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least one parameter is required."
+            }
+          ]
+        }
+      }
+    ]
+  }

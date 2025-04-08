@@ -1,0 +1,44 @@
+{
+    "functions": [
+      {
+        "name": "Distinct",
+        "description": "Returns a table with distinct values from a specified column.",
+        "syntax": "Distinct(source, valueFunc)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to operate on."
+          },
+          {
+            "name": "valueFunc",
+            "type": "Boolean",
+            "description": "The formula to apply to each record."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "valueFunc": "Must be a boolean expression."
+        },
+        "validators": {
+          "source": "isTable",
+          "valueFunc": "isBoolean"
+        },
+        "signatures": [
+          ["source", "valueFunc"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least two parameters are required."
+            }
+          ]
+        }
+      }
+    ]
+  }

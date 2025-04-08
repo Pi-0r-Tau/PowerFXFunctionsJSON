@@ -1,0 +1,52 @@
+{
+    "functions": [
+      {
+        "name": "DropColumns",
+        "description": "Removes specified columns from a table or record.",
+        "syntax": "DropColumns(source, name, name, ...)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table or Record",
+            "description": "The table or record from which columns will be removed."
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "description": "The name of the column to remove."
+          }
+
+        ],
+        "constraints": {
+          "source": "Must be a table or record.",
+          "name": "Must be a valid column name."
+        },
+        "validators": {
+          "source": "isTableOrRecord",
+          "name": "isValidColumnName"
+        },
+        "signatures": [
+          ["source", "name"],
+          ["source", "name", "name"],
+          ["source", "name", "name", "name"]
+
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "ColumnNotFound",
+              "message": "The specified column does not exist in the source."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least two parameters are required."
+            }
+          ]
+        }
+      }
+    ]
+  }
