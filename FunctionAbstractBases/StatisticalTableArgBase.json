@@ -1,0 +1,54 @@
+{
+    "functions": [
+      {
+        "name": "StatisticalTableFunction",
+        "description": "Abstract base class for statistical functions with similar signatures that take a table as the first argument and a value function as the second argument.",
+        "syntax": "StatisticalTableFunction(name, description, category, nativeDecimal)",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "String",
+            "description": "The name of the function."
+          },
+          {
+            "name": "description",
+            "type": "StringGetter",
+            "description": "The description of the function."
+          },
+          {
+            "name": "category",
+            "type": "FunctionCategories",
+            "description": "The category of the function."
+          },
+          {
+            "name": "nativeDecimal",
+            "type": "Boolean",
+            "description": "Indicates if the function uses native decimal."
+          }
+        ],
+        "constraints": {
+          "name": "Must be a string.",
+          "description": "Must be a valid StringGetter.",
+          "category": "Must be a valid FunctionCategories.",
+          "nativeDecimal": "Must be a boolean."
+        },
+        "validators": {
+          "name": "isString",
+          "description": "isStringGetter",
+          "category": "isFunctionCategories",
+          "nativeDecimal": "isBoolean"
+        },
+        "signatures": [
+          ["name", "description", "category", "nativeDecimal"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            }
+          ]
+        }
+      }
+    ]
+  }
