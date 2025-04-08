@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "Ln",
+        "description": "Computes the natural logarithm of a number.",
+        "syntax": "Ln(number)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number to compute the natural logarithm for."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a number."
+        },
+        "validators": {
+          "number": "isNumber"
+        },
+        "signatures": [
+          ["number"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "LnTable",
+        "description": "Computes the natural logarithm values of each item in the input table.",
+        "syntax": "Ln(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table of numbers to compute the natural logarithm for."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table."
+        },
+        "validators": {
+          "E": "isTable"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

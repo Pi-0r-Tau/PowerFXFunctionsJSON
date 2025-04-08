@@ -1,0 +1,164 @@
+{
+    "functions": [
+      {
+        "name": "LeftRightScalar",
+        "description": "Returns the left or right part of a string.",
+        "syntax": "LeftRight(arg, count)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "String",
+            "description": "The string to extract from."
+          },
+          {
+            "name": "count",
+            "type": "Number",
+            "description": "The number of characters to extract."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a string.",
+          "count": "Must be a number."
+        },
+        "validators": {
+          "arg": "isString",
+          "count": "isNumber"
+        },
+        "signatures": [
+          ["arg", "count"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            },
+            {
+              "code": "InvalidCount",
+              "message": "The count must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "LeftRightTableScalar",
+        "description": "Returns the left or right part of each string in a table.",
+        "syntax": "LeftRight(arg, count)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "Table",
+            "description": "The table of strings to extract from."
+          },
+          {
+            "name": "count",
+            "type": "Number",
+            "description": "The number of characters to extract."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a table.",
+          "count": "Must be a number."
+        },
+        "validators": {
+          "arg": "isTable",
+          "count": "isNumber"
+        },
+        "signatures": [
+          ["arg", "count"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            },
+            {
+              "code": "InvalidCount",
+              "message": "The count must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "LeftRightTableTable",
+        "description": "Returns the left or right part of each string in a table, with count specified as a table.",
+        "syntax": "LeftRight(arg, count)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "Table",
+            "description": "The table of strings to extract from."
+          },
+          {
+            "name": "count",
+            "type": "Table",
+            "description": "The table of counts specifying the number of characters to extract."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a table.",
+          "count": "Must be a table."
+        },
+        "validators": {
+          "arg": "isTable",
+          "count": "isTable"
+        },
+        "signatures": [
+          ["arg", "count"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            },
+            {
+              "code": "InvalidCount",
+              "message": "The count must be a table."
+            }
+          ]
+        }
+      },
+      {
+        "name": "LeftRightScalarTable",
+        "description": "Returns the left or right part of a string, with count specified as a table.",
+        "syntax": "LeftRight(arg, count)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "String",
+            "description": "The string to extract from."
+          },
+          {
+            "name": "count",
+            "type": "Table",
+            "description": "The table of counts specifying the number of characters to extract."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a string.",
+          "count": "Must be a table."
+        },
+        "validators": {
+          "arg": "isString",
+          "count": "isTable"
+        },
+        "signatures": [
+          ["arg", "count"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            },
+            {
+              "code": "InvalidCount",
+              "message": "The count must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

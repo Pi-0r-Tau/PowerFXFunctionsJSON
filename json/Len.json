@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "Len",
+        "description": "Returns the length of a string.",
+        "syntax": "Len(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "String",
+            "description": "The string to measure."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a string."
+        },
+        "validators": {
+          "arg": "isString"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            }
+          ]
+        }
+      },
+      {
+        "name": "LenTF",
+        "description": "Returns the length of each string in a table.",
+        "syntax": "Len(arg)",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "Table",
+            "description": "The table of strings to measure."
+          }
+        ],
+        "constraints": {
+          "arg": "Must be a table."
+        },
+        "validators": {
+          "arg": "isTable"
+        },
+        "signatures": [
+          ["arg"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table."
+            }
+          ]
+        }
+      }
+    ]
+  }

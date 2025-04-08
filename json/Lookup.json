@@ -1,0 +1,52 @@
+{
+    "functions": [
+      {
+        "name": "LookUp",
+        "description": "Looks up a record in a table based on a predicate.",
+        "syntax": "LookUp(source, predicate, [projectionFunc])",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table",
+            "description": "The table to search."
+          },
+          {
+            "name": "predicate",
+            "type": "Boolean",
+            "description": "The condition to match."
+          },
+          {
+            "name": "projectionFunc",
+            "type": "Any",
+            "description": "Optional function to project the result."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table.",
+          "predicate": "Must be a boolean.",
+          "projectionFunc": "Must be a valid function."
+        },
+        "validators": {
+          "source": "isTable",
+          "predicate": "isBoolean",
+          "projectionFunc": "isFunction"
+        },
+        "signatures": [
+          ["source", "predicate"],
+          ["source", "predicate", "projectionFunc"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid type."
+            },
+            {
+              "code": "InvalidPredicate",
+              "message": "The predicate must be a boolean."
+            }
+          ]
+        }
+      }
+    ]
+  }

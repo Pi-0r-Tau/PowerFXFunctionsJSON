@@ -1,0 +1,42 @@
+{
+    "functions": [
+      {
+        "name": "VariadicLogical",
+        "description": "Performs logical operations (AND/OR) on multiple conditions.",
+        "syntax": "And(cond1, cond2, ...)",
+        "parameters": [
+          {
+            "name": "cond1",
+            "type": "Boolean",
+            "description": "The first condition."
+          },
+          {
+            "name": "cond2",
+            "type": "Boolean",
+            "description": "The second condition."
+          }
+        ],
+        "constraints": {
+          "cond1": "Must be a boolean.",
+          "cond2": "Must be a boolean."
+        },
+        "validators": {
+          "cond1": "isBoolean",
+          "cond2": "isBoolean"
+        },
+        "signatures": [
+          ["cond1"],
+          ["cond1", "cond2"],
+          ["cond1", "cond2", "cond3"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a boolean."
+            }
+          ]
+        }
+      }
+    ]
+  }
