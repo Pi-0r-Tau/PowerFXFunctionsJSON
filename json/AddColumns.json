@@ -1,0 +1,57 @@
+{
+    "functions": [
+      {
+        "name": "AddColumns",
+        "description": "Adds columns to a table or record based on specified names and value functions.",
+        "syntax": "AddColumns(source, name, valueFunc, name, valueFunc, ...)",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table or Record",
+            "description": "The table or record to which columns will be added."
+          },
+          {
+            "name": "name",
+            "type": "String",
+            "description": "The name of the column to add."
+          },
+          {
+            "name": "valueFunc",
+            "type": "Function",
+            "description": "The function that defines the values for the new column."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table or record.",
+          "name": "Must be a valid identifier and not conflict with existing columns.",
+          "valueFunc": "Must be a valid function."
+        },
+        "validators": {
+          "source": "isTableOrRecord",
+          "name": "isValidIdentifier",
+          "valueFunc": "isFunction"
+        },
+        "signatures": [
+          ["source", "name", "valueFunc"],
+          ["source", "name", "valueFunc", "name", "valueFunc"],
+          ["source", "name", "valueFunc", "name", "valueFunc", "name", "valueFunc"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "One or more parameters are not of the expected type."
+            },
+            {
+              "code": "DuplicateColumnName",
+              "message": "A column with the specified name already exists."
+            },
+            {
+              "code": "TooFewArguments",
+              "message": "At least three parameters are required."
+            }
+          ]
+        }
+      }
+    ]
+  }

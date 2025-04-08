@@ -1,0 +1,62 @@
+{
+    "functions": [
+      {
+        "name": "Acos",
+        "description": "Returns the arc cosine of a number.",
+        "syntax": "Acos(number)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The number for which to find the arc cosine."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a numeric value."
+        },
+        "validators": {
+          "number": "isNumber"
+        },
+        "signatures": [
+          ["number"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a numeric value."
+            }
+          ]
+        }
+      },
+      {
+        "name": "AcosTable",
+        "description": "Computes the arc cosine of each item in the input table.",
+        "syntax": "Acos(E)",
+        "parameters": [
+          {
+            "name": "E",
+            "type": "Table",
+            "description": "The table containing numeric values."
+          }
+        ],
+        "constraints": {
+          "E": "Must be a table of numeric values."
+        },
+        "validators": {
+          "E": "isTableOfNumbers"
+        },
+        "signatures": [
+          ["E"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a table of numeric values."
+            }
+          ]
+        }
+      }
+    ]
+  }
