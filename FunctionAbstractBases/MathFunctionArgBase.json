@@ -1,0 +1,136 @@
+{
+    "functions": [
+      {
+        "name": "MathOneArg",
+        "description": "Abstract base class for all single-argument math functions that return numeric values.",
+        "syntax": "Math(number)",
+        "parameters": [
+          {
+            "name": "number",
+            "type": "Number",
+            "description": "The numeric value to process."
+          }
+        ],
+        "constraints": {
+          "number": "Must be a numeric value."
+        },
+        "validators": {
+          "number": "isNumber"
+        },
+        "signatures": [
+          ["number"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a number."
+            }
+          ]
+        }
+      },
+      {
+        "name": "MathOneArgTable",
+        "description": "Abstract base class for all single-argument math functions that operate on tables of numbers.",
+        "syntax": "MathFunction(table)",
+        "parameters": [
+          {
+            "name": "table",
+            "type": "Table",
+            "description": "A single-column table of numeric values to process."
+          }
+        ],
+        "constraints": {
+          "table": "Must be a single-column table containing numeric values."
+        },
+        "validators": {
+          "table": "isSingleColumnNumberTable"
+        },
+        "signatures": [
+          ["table"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a single-column table of numbers."
+            }
+          ]
+        }
+      },
+      {
+        "name": "MathTwoArg",
+        "description": "Abstract base class for all two-argument math functions that return numeric values.",
+        "syntax": "MathFunction(number1, [number2])",
+        "parameters": [
+          {
+            "name": "number1",
+            "type": "Number",
+            "description": "The first numeric value to process."
+          },
+          {
+            "name": "number2",
+            "type": "Number",
+            "description": "The second numeric value to process."
+          }
+        ],
+        "constraints": {
+          "number1": "Must be a numeric value.",
+          "number2": "Must be a numeric value."
+        },
+        "validators": {
+          "number1": "isNumber",
+          "number2": "isNumber"
+        },
+        "signatures": [
+          ["number1"],
+          ["number1", "number2"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be numbers."
+            }
+          ]
+        }
+      },
+      {
+        "name": "MathTwoArgTable",
+        "description": "Abstract base class for all two-argument math functions that operate on tables.",
+        "syntax": "MathFunction(arg1, [arg2])",
+        "parameters": [
+          {
+            "name": "arg1",
+            "type": "Table|Number",
+            "description": "The first value or table to process."
+          },
+          {
+            "name": "arg2",
+            "type": "Table|Number",
+            "description": "The second value or table to process."
+          }
+        ],
+        "constraints": {
+          "arg1": "Must be a numeric value or a single-column table of numeric values.",
+          "arg2": "Must be a numeric value or a single-column table of numeric values."
+        },
+        "validators": {
+          "arg1": "isNumberOrNumberTable",
+          "arg2": "isNumberOrNumberTable"
+        },
+        "signatures": [
+          ["arg1"],
+          ["arg1", "arg2"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "Parameters must be numbers or single-column tables of numbers."
+            }
+          ]
+        }
+      }
+    ]
+  }
