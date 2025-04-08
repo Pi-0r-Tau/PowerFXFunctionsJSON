@@ -1,0 +1,61 @@
+{
+    "functions": [
+      {
+        "name": "ShowDropColumnsFunctionBase",
+        "description": "Abstract base class for ShowColumns and DropColumns functions, which show or remove specified columns from a table or record.",
+        "syntax": "Function(source, columnName1, [columnName2, ...])",
+        "parameters": [
+          {
+            "name": "source",
+            "type": "Table|Record",
+            "description": "The table or record to show or remove columns from."
+          },
+          {
+            "name": "columnName1",
+            "type": "String",
+            "description": "The name of a column to show or remove."
+          },
+          {
+            "name": "columnName2",
+            "type": "String",
+            "description": "Optional. The name of another column to show or remove."
+          }
+        ],
+        "constraints": {
+          "source": "Must be a table or record.",
+          "columnName1": "Must be a valid column name in the source.",
+          "columnName2": "Must be a valid column name in the source."
+        },
+        "validators": {
+          "source": "isTableOrRecord",
+          "columnName1": "isString",
+          "columnName2": "isString"
+        },
+        "signatures": [
+          ["source", "columnName1"],
+          ["source", "columnName1", "columnName2"],
+          ["source", "columnName1", "columnName2", "columnName3"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The source must be a table or record."
+            },
+            {
+              "code": "InvalidColumnName",
+              "message": "Column names must be valid identifiers."
+            },
+            {
+              "code": "ColumnNotFound",
+              "message": "The specified column does not exist in the source."
+            },
+            {
+              "code": "DuplicateColumnName",
+              "message": "Column names should not be specified multiple times."
+            }
+          ]
+        }
+      }
+    ]
+  }
