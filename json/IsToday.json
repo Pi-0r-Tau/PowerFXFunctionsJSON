@@ -1,0 +1,37 @@
+{
+    "functions": [
+      {
+        "name": "IsToday",
+        "description": "Checks if the given date is today.",
+        "syntax": "IsToday(date)",
+        "parameters": [
+          {
+            "name": "date",
+            "type": "DateTime",
+            "description": "The date to check."
+          }
+        ],
+        "constraints": {
+          "date": "Must be a valid DateTime."
+        },
+        "validators": {
+          "date": "isDateTime"
+        },
+        "signatures": [
+          ["date"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid DateTime."
+            },
+            {
+              "code": "InvalidDate",
+              "message": "The date must not be a Time."
+            }
+          ]
+        }
+      }
+    ]
+  }

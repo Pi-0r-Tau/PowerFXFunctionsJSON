@@ -1,0 +1,52 @@
+{
+    "functions": [
+      {
+        "name": "IsMatch",
+        "description": "Checks if the input text matches the specified format.",
+        "syntax": "IsMatch(text, format, [options])",
+        "parameters": [
+          {
+            "name": "text",
+            "type": "String",
+            "description": "The text to check."
+          },
+          {
+            "name": "format",
+            "type": "String",
+            "description": "The format to match against."
+          },
+          {
+            "name": "options",
+            "type": "String",
+            "description": "Optional matching options."
+          }
+        ],
+        "constraints": {
+          "text": "Must be a string.",
+          "format": "Must be a string.",
+          "options": "Must be a string."
+        },
+        "validators": {
+          "text": "isString",
+          "format": "isString",
+          "options": "isString"
+        },
+        "signatures": [
+          ["text", "format"],
+          ["text", "format", "options"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a string."
+            },
+            {
+              "code": "InvalidFormat",
+              "message": "The format must be a valid string."
+            }
+          ]
+        }
+      }
+    ]
+  }

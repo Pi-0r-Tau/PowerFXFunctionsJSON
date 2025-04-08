@@ -1,0 +1,45 @@
+{
+    "functions": [
+      {
+        "name": "Json",
+        "description": "Converts data to JSON format.",
+        "syntax": "JSON(data, [format])",
+        "parameters": [
+          {
+            "name": "data",
+            "type": "Any",
+            "description": "The data to convert to JSON."
+          },
+          {
+            "name": "format",
+            "type": "String",
+            "description": "Optional format options."
+          }
+        ],
+        "constraints": {
+          "data": "Must be valid data.",
+          "format": "Must be a string."
+        },
+        "validators": {
+          "data": "isData",
+          "format": "isString"
+        },
+        "signatures": [
+          ["data"],
+          ["data", "format"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be valid data."
+            },
+            {
+              "code": "InvalidFormat",
+              "message": "The format must be a valid string."
+            }
+          ]
+        }
+      }
+    ]
+  }

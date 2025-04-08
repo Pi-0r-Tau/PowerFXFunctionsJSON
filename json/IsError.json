@@ -1,0 +1,33 @@
+{
+    "functions": [
+      {
+        "name": "IsError",
+        "description": "Checks if the given value results in an error.",
+        "syntax": "IsError(value)",
+        "parameters": [
+          {
+            "name": "value",
+            "type": "Any",
+            "description": "The value to check."
+          }
+        ],
+        "constraints": {
+          "value": "Must be a valid value."
+        },
+        "validators": {
+          "value": "isValue"
+        },
+        "signatures": [
+          ["value"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid value."
+            }
+          ]
+        }
+      }
+    ]
+  }

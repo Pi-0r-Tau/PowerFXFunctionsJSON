@@ -1,0 +1,18 @@
+{
+    "functions": [
+      {
+        "name": "Language",
+        "description": "Returns the language of the user.",
+        "syntax": "Language()",
+        "parameters": [],
+        "constraints": {},
+        "validators": {},
+        "signatures": [
+          []
+        ],
+        "errorHandling": {
+          "errors": []
+        }
+      }
+    ]
+  }

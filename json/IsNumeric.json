@@ -1,0 +1,33 @@
+{
+    "functions": [
+      {
+        "name": "IsNumeric",
+        "description": "Checks if the given expression is numeric.",
+        "syntax": "IsNumeric(expression)",
+        "parameters": [
+          {
+            "name": "expression",
+            "type": "Any",
+            "description": "The expression to check."
+          }
+        ],
+        "constraints": {
+          "expression": "Must be a valid expression."
+        },
+        "validators": {
+          "expression": "isExpression"
+        },
+        "signatures": [
+          ["expression"]
+        ],
+        "errorHandling": {
+          "errors": [
+            {
+              "code": "InvalidType",
+              "message": "The parameter must be a valid expression."
+            }
+          ]
+        }
+      }
+    ]
+  }
